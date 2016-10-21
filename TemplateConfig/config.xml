@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datas>
+	<data name="Achievement" bytesname="Achievement_TxtPKG" ismap="1">
+		<excel file="Achievement.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="AchievementCfg" bytesname="AchievementCfg_TxtPKG" ismap="1">
+		<excel file="AchievementCfg.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="AnimListTabLine" bytesname="ActionList_TxtPKG" repSpecialChar="1" ismap="0">
+		<excel file="ActionList_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="Announcement" bytesname="Announcement_TxtPKG" ismap="1">
+		<excel file="Data_Jyx/Announcement.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="AnnounceTaskCfg" bytesname="AnnounceTaskCfg_TxtPKG" ismap="1">
+		<excel file="Data_Jyx/AnnounceTaskCfg.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ActionPowerMarketInfo" bytesname="ActionPowerMarketInfo_TxtPKG" ismap="1">
+		<excel file="ActionPowerMarketInfo.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ActivityLevel" bytesname="ActivityLevel_TxtPKG" ismap="1">
+		<excel file="ActivityLevel.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ActivityResource" bytesname="ActivityResource_TxtPKG" ismap="1">
+		<excel file="ActivityResource.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ActivityTask" bytesname="ActivityTask_TxtPKG" ismap="1">
+		<excel file="ActivityTask.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="AvatarDIY" bytesname="AvatarDIY_TxtPKG" ismap="1">
+		<excel file="AvatarDIY.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="AwardShow" bytesname="AwardShow_TxtPKG" ismap="1">
+		<excel file="AwardShow.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseItem" bytesname="BaseItem_TxtPKG" ismap="0">
+		<excel file="BaseItem_TxtPKG.xlsx" sheet="Sheet1" />
+		<excel file="Data_May/BaseItem_Egg.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BadName" bytesname="BadName_TxtPKG" ismap="0">
+		<excel file="BadName.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BadWord" bytesname="BadWord_TxtPKG" ismap="0">
+		<excel file="BadWord.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseActive" bytesname="BaseActive_TxtPKG" ismap="1">
+		<excel file="BaseActive_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseCourse" bytesname="BaseCourse_TxtPKG" ismap="1">
+		<excel file="BaseCourse.xlsx" sheet="Sheet1" />
+		<excel file="Data_May/BaseCourse_Player.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseFruitSlots" bytesname="BaseFruitSlots_TxtPKG" ismap="1">
+		<excel file="BaseFruitSlots.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseNpc" bytesname="BaseNpc_TxtPKG" ismap="1">
+		<excel file="BaseNPC.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BaseTask" bytesname="BaseTask_TxtPKG" ismap="1">
+		<excel file="BaseTask.xlsx" sheet="Sheet1" />
+		<excel file="Data_Jyx/AnnounceTask.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BestFriendExp" bytesname="BestFriendExp_TxtPKG" ismap="1">
+		<excel file="BestFriendExp.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="BtlNoteLib" bytesname="BtlNoteLib_TxtPKG" ismap="0">
+		<excel file="BtlNoteLib_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="CameraList" bytesname="CameraList_TxtPKG" ismap="1">
+		<excel file="CameraList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ChallengeLine" bytesname="ChallengeLine_TxtPKG" ismap="1">
+		<excel file="ChallengeLine.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ConstellationSwapLine" bytesname="ConstellationSwapLine_TxtPKG" ismap="0">
+		<excel file="ConstellationSwapLine.xlsx" sheet="Sheet2" />
+	</data>
+	<data name="CreatePlayerLine" bytesname="CreatePlayerLine_TxtPKG" ismap="1">
+		<excel file="CreatePlayerLine.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="DanceSoloList" bytesname="DanceSoloList_TxtPKG" ismap="1">
+		<excel file="DanceSoloList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ExpressionTxt" bytesname="Expression_TxtPKG" ismap="1">
+		<excel file="Expression.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="Found" bytesname="Found_TxtPKG" ismap="1">
+		<excel file="Found.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="GiftList" bytesname="GiftList_TxtPKG" ismap="1">
+		<excel file="GiftList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="GuildRankAward" bytesname="GuildRankAward_TxtPKG" ismap="1">
+		<excel file="GuildRankAward.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="GiftReward" bytesname="GiftReward_TxtPKG" ismap="0">
+		<excel file="GiftReward.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="HelpSetting" bytesname="HelpUI_TxtPKG" ismap="1">
+		<excel file="HelpUI.xlsx" sheet="Main" />
+	</data>
+	<data name="ItemConflict" bytesname="ItemConflict_TxtPKG" ismap="1">
+		<excel file="ItemConflict.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="KeepRankingAward" bytesname="KeepRankingAward_TxtPKG" ismap="1">
+		<excel file="KeepRankingAward.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="Level" bytesname="Level_TxtPKG" ismap="0">
+		<excel file="Level.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="LevelCourse" bytesname="LevelCourse_TxtPKG" ismap="1">
+		<excel file="LevelCourse.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="LotteryData" bytesname="Lottery_TxtPKG" ismap="1">
+		<excel file="Lottery.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="LoverExp" bytesname="LoverExp_TxtPKG" ismap="0">
+		<excel file="LoverExp.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MallAvatarDiy" bytesname="MallAvatarDiy_TxtPKG" ismap="1">
+		<excel file="MallAvatarDiy.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MessageTxt" bytesname="Message_TxtPKG" ismap="1">
+		<excel file="Message/message.xlsx" sheet="Sheet1" />
+		<excel file="Message/message_task.xlsx" sheet="Sheet1" />
+		<excel file="Message/message_ui1.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_25000_26999_Task.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_27000_27999_RoomList.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_28000_28999_Activity.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_29000_29999_Shop.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_30000_30999_Backpack.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_31000_32000_Charge.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_33000_33999_Train.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_34000_34999_RankingLsit.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_35000_35999_Web.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_36001_36100_SetUp.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_36101_36999_Figure.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_37001_37999_Chat.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_38000_38100_DressUp.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_38101_38499_Mail.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_38500_38999_DIY.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_39000_39499_Friends.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_39500_40499_Carnival.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_40500_41000_Synthesis.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_41001_41499_GrowingUp.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_41500_41999_Notice.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_42000_42499_S.Shop.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_43000_43199_Create.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_43200_43999_Dance.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_44000_44199_Login.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_44200_44999_Tutoria.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_45000_45999_Tour.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_46000_46999_GameMain.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_47000_47999_Public.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_48000_48499_Annoouncement.xlsx" sheet="Sheet1" />
+		<excel file="Message/Message_48500_48999_Achievement.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MessageNotification" bytesname="MessageNotification_TxtPKG" ismap="1">
+		<excel file="MessageNotification_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionHPList" bytesname="MissionHPList_TxtPKG" ismap="1">
+		<excel file="MissionHPList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionMusicRefreshList" bytesname="MissionMusicRefreshList_TxtPKG" ismap="1">
+		<excel file="MissionMusicRefreshList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionNameList" bytesname="MissionNameList_TxtPKG" ismap="1">
+		<excel file="MissionNameList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionRandomAward" bytesname="MissionRandomAward_TxtPKG" ismap="1">
+		<excel file="MissionRandomAward.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionRandomLimit" bytesname="MissionRandomLimit_TxtPKG" ismap="1">
+		<excel file="MissionRandomLimit.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionRandomMusic" bytesname="MissionRandomMusic_TxtPKG" ismap="1">
+		<excel file="MissionRandomMusic.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MissionRushBuyList" bytesname="MissionRushBuyList_TxtPKG" ismap="1">
+		<excel file="MissionRushBuyList.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="MusicListTabLine" bytesname="MusicList_TxtPKG" ismap="0">
+		<excel file="MusicList_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="NudeLegConfig" bytesname="NudeLegConfig_TxtPKG" ismap="1">
+		<excel file="NudeLegConfig.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="OfflinePoint" bytesname="OfflinePoint_TxtPKG" ismap="1">
+		<excel file="OfflinePoint_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="Onthelist" bytesname="Onthelist_TxtPKG" ismap="1">
+		<excel file="Onthelist.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PlatformShare" bytesname="PlatformShare_TxtPKG" ismap="1">
+		<excel file="PlatformShare.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PlayerIcon" bytesname="PlayerIcon_TxtPKG" ismap="1">
+		<excel file="PlayerIcon.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PlayerTag" bytesname="PlayerTag_TxtPKG" ismap="1">
+		<excel file="PlayerTag.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="EffectList" bytesname="EffectList_TxtPKG" ismap="1">
+		<excel file="EffectList_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PopularityCourse" bytesname="PopularityCourse_TxtPKG" ismap="1">
+		<excel file="PopularityCourse.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PopularityLevel" bytesname="PopularityLevel_TxtPKG" ismap="1">
+		<excel file="PopularityLevel.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="PrivityTest" bytesname="PrivityTest_TxtPKG" ismap="1">
+		<excel file="PrivityTest.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="RankingTitle" bytesname="RankingTitle_TxtPKG" ismap="1">
+		<excel file="RankingTitle.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="Recharge" bytesname="Recharge_TxtPKG" ismap="0">
+		<excel file="BaesRecharge.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="RedHeartRandom" bytesname="RedHeartRandom_TxtPKG" ismap="1">
+		<excel file="RedHeartRandom.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="RedHeartType" bytesname="RedHeartType_TxtPKG" ismap="1">
+		<excel file="RedHeartType.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="ReNewSign" bytesname="ReNewSign_TxtPKG" ismap="1">
+		<excel file="ReNewSign.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="RRCheckIn" bytesname="RRCheckIn_TxtPKG" ismap="1">
+		<excel file="RRCheckIn_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="SocialAnimation" bytesname="SocialAnimation_TxtPKG" ismap="1">
+		<excel file="SocialAnimation.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="StoryInfo" bytesname="StoryInfo_TxtPKG" ismap="1">
+		<excel file="StoryInfo.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="SoundList" bytesname="SoundList_TxtPKG" ismap="0">
+		<excel file="SoundList_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="SpouseExp" bytesname="SpouseExp_TxtPKG" ismap="1">
+		<excel file="SpouseExp.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="StagePoint" bytesname="StagePoint_TxtPKG" ismap="1">
+		<excel file="StagePoint.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="StarLevel" bytesname="StarLevel_TxtPKG" ismap="0">
+		<excel file="StarLevel.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TaskPayItem" bytesname="TaskPayItem_TxtPKG" ismap="0">
+		<excel file="TaskPayItem.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TouchAnimation" bytesname="TouchAnimation_TxtPKG" ismap="1">
+		<excel file="TouchAnimation.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourCheer" bytesname="TourCheer_TxtPKG" ismap="0">
+		<excel file="TourCheer.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TutorialLine" bytesname="Tutorial_TxtPKG" ismap="0">
+		<excel file="Tutorial_TxtPKG.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourChapter" bytesname="TourChapter_TxtPKG" ismap="1">
+		<excel file="TourChapter.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourRaid" bytesname="TourRaid_TxtPKG" ismap="1">
+		<excel file="TourRaid.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourPay" bytesname="TourPay_TxtPKG" ismap="1">
+		<excel file="TourPay.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourBoss" bytesname="TourBoss_TxtPKG" ismap="1">
+		<excel file="TourBoss.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="TourSkill" bytesname="TourSkill_TxtPKG" ismap="1">
+		<excel file="TourSkill.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="UIAssetListTabLine" bytesname="UIAssetList_TxtPKG" ismap="0">
+		<excel file="UIAssetList_TxtPKG.xlsx" sheet="Main" />
+	</data>
+	<data name="VIPLevel" bytesname="VIPLevel_TxtPKG" ismap="1">
+		<excel file="VIPLevel.xlsx" sheet="Sheet1" />
+	</data>
+	<data name="VIPRight" bytesname="VIPRight_TxtPKG" ismap="1">
+		<excel file="VIPRight.xlsx" sheet="Sheet1" />
+	</data>
+</datas>

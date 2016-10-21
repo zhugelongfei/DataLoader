@@ -1,0 +1,12 @@
+E:\Loader\Loader\bin\Debug\Loader.exe
+E:\Loader\Loader\bin\Debug\Loader.pdb
+E:\Loader\Loader\bin\Debug\Thrift.dll
+E:\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+E:\Loader\Loader\obj\Debug\Loader.exe
+E:\Loader\Loader\obj\Debug\Loader.pdb
+E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+E:\LongFeiTools\Loader\Loader\bin\Debug\Loader.exe
+E:\LongFeiTools\Loader\Loader\bin\Debug\Loader.pdb
+E:\LongFeiTools\Loader\Loader\bin\Debug\Thrift.dll
+E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.exe
+E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.pdb

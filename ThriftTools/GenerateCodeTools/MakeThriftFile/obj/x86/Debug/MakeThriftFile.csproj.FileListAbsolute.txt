@@ -1,0 +1,1 @@
+E:\Loader\ThriftTools\GenerateCodeTools\MakeThriftFile\bin\Debug\MakeThriftFile.exe.config

@@ -1,0 +1,100 @@
+package com.ling9527.music.common.msg.auto;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.apache.thrift.TBase;
+import com.ling9527.music.common.msg.auto.MessageType;
+#foreach( $csMsg in $msgProps )
+import ${csMsg.fullName};
+#end
+
+/**
+ * cs消息类型和值映射
+ * <li>
+ * 注意： <p>1. 消息名必须按照驼峰规则命名， 开头CS除外， 其他以大写字母开始的单词组合</p>
+ *      <p>2. messageType.thrift文件中的消息类型，以该文件中的类型对应</p>
+ *      <p>3. 消息名尽量精简易懂，除CS外的单词不超过4个</p>
+ * </li>
+ * 
+ * @author CodeGenerator, do not edit unless you are sure that you know what you are doing.
+ * 
+ */
+@SuppressWarnings("rawtypes")
+public class CSMsgHelper {
+	/** 消息类与类型值映射 */
+	private static Map<Class<? extends TBase>, MessageType> msgClassToTypeMaps = new HashMap<>();
+
+	/** 消息类型值与类映射 */
+	private static Map<Integer, Class<? extends TBase>> msgTypeToClassMaps = new HashMap<>();
+
+	/* 所有客户端消息在此进行添加 */
+	static {
+		#foreach( $csMsg in $msgProps )
+            msgClassToTypeMaps.put(${csMsg.name}.class, MessageType.${csMsg.type});
+		#end
+	}
+
+	/* 根据映射生成另一个映射关系 */
+	static {
+		for (Entry<Class<? extends TBase>, MessageType> entry : msgClassToTypeMaps.entrySet()) {
+			msgTypeToClassMaps.put(entry.getValue().getValue(), entry.getKey());
+		}
+	}
+
+	/**
+	 * 根据类型值创建消息对象
+	 * 
+	 * @param msgType
+	 * @return
+	 */
+	public static TBase<?, ?> createMessage(short msgType) {
+		MessageType _msgType = MessageType.findByValue(msgType);
+		switch (_msgType) {
+			#foreach( $csMsg in $msgProps )
+case ${csMsg.type}:
+		    	return new ${csMsg.name}();
+			#end
+default:
+			throw new RuntimeException("MessageType is undefine,type="+msgType);
+		}
+		
+	}
+	
+	/**
+	 * 根据类获得类型值
+	 * 
+	 * @param clazz
+	 * @return
+	 */
+	public static short getMsgTypeValue(Class<? extends TBase> clazz) {
+		MessageType _type = msgClassToTypeMaps.get(clazz);
+		if (_type == null) {
+			return -1;
+		}
+
+		return (short) _type.getValue();
+	}
+
+	/**
+	 * 获取消息类型枚举
+	 * 
+	 * @param clazz
+	 * @return
+	 */
+	public static MessageType getMsgType(Class<? extends TBase> clazz) {
+		return msgClassToTypeMaps.get(clazz);
+	}
+
+	/**
+	 * 根据类型值获得类
+	 * 
+	 * @param msgType
+	 * @return
+	 */
+	public static Class<? extends TBase> getMsgClass(int msgType) {
+		return msgTypeToClassMaps.get(msgType);
+	}
+
+}
