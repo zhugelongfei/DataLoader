@@ -71,37 +71,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BytesFileBuilder.cs" />
-    <Compile Include="CompileCSharpToDll.cs" />
-    <Compile Include="CSharpFileBuilder.cs" />
-    <Compile Include="DiyStructInfo.cs" />
-    <Compile Include="ExcelToDataSet\AnalysisExcelData.cs" />
-    <Compile Include="ExcelStruct\DataTableUtils.cs" />
-    <Compile Include="ExcelStruct\ExcelVariable.cs" />
-    <Compile Include="ExcelStruct\ExcelSheet.cs" />
-    <Compile Include="Exception\ProcessExcelException.cs" />
-    <Compile Include="FilePathManager.cs" />
-    <Compile Include="NVelocityHelper.cs" />
-    <Compile Include="ProgramMain.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\AchievementCfg.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\AchievementCfgArray.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\ActivityLevel.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\ActivityLevelArray.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\Counter.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\CounterArray.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\RoomAction.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\RoomActionArray.cs" />
+    <Compile Include="Data\ScriptFile\ThriftStruct\TestStruct.cs" />
+    <Compile Include="Scripts\BytesFileBuilder.cs" />
+    <Compile Include="Scripts\CompileCSharpToDll.cs" />
+    <Compile Include="Scripts\CSharpFileBuilder.cs" />
+    <Compile Include="Scripts\Struct\DataTableRowUtils.cs" />
+    <Compile Include="Scripts\Struct\DiyStructInfo.cs" />
+    <Compile Include="Scripts\ExcelToDataSet\AnalysisExcelData.cs" />
+    <Compile Include="Scripts\Struct\ExcelVariable.cs" />
+    <Compile Include="Scripts\Struct\ExcelSheet.cs" />
+    <Compile Include="Scripts\Exception\ProcessExcelException.cs" />
+    <Compile Include="Scripts\FilePathManager.cs" />
+    <Compile Include="Scripts\NVelocityHelper.cs" />
+    <Compile Include="Scripts\ProgramMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExcelFile\AchievementCfg.xlsx" />
-    <None Include="ExcelFile\ActivityLevel.xlsx" />
-    <None Include="ExcelFile\Counter.xlsx" />
-    <None Include="ExcelFile\RoomAction.xlsx" />
-    <None Include="TemplateFile\ThriftStructTemplate.velocity" />
+    <None Include="Data\Bytes\AchievementCfg.bytes" />
+    <None Include="Data\Bytes\ActivityLevel.bytes" />
+    <None Include="Data\Bytes\Counter.bytes" />
+    <None Include="Data\Bytes\RoomAction.bytes" />
+    <None Include="Data\ExcelFile\AchievementCfg.xlsx" />
+    <None Include="Data\ExcelFile\ActivityLevel.xlsx" />
+    <None Include="Data\ExcelFile\Counter.xlsx" />
+    <None Include="Data\ExcelFile\RoomAction.xlsx" />
+    <None Include="Data\TemplateFile\PublicStructTemplate.velocity" />
+    <None Include="Data\TemplateFile\CommonStructThriftTemplate.velocity" />
+    <None Include="Data\ThriftFile\AchievementCfg.thrift" />
+    <None Include="Data\ThriftFile\ActivityLevel.thrift" />
+    <None Include="Data\ThriftFile\Counter.thrift" />
+    <None Include="Data\ThriftFile\public.thrift" />
+    <None Include="Data\ThriftFile\RoomAction.thrift" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lib\Thrift.dll" />
-    <Content Include="Tools\thrift-0.9.3.exe" />
+    <Content Include="Data\Lib\Thrift.dll" />
+    <Content Include="Data\Result\ThriftScript.dll" />
+    <Content Include="Data\Tools\thrift-0.9.3.exe" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Bytes\" />
-    <Folder Include="Result\" />
-    <Folder Include="ScriptFile\ThriftStruct\" />
-    <Folder Include="ThriftFile\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
