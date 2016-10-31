@@ -7,11 +7,12 @@ using Thrift.Protocol;
 
 namespace Loader
 {
-    class BytesFileBuilder
+    public class BytesFileBuilder
     {
-        public static void BuildAllData(Dictionary<string, List<ExcelSheet>> allExcelData)
+        public static Assembly assembly;
+        public static void BuildAllData(Dictionary<string, List<ExcelClass>> allExcelData)
         {
-            Assembly assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
+            assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
 
             foreach (var item in allExcelData)
             {
@@ -20,15 +21,15 @@ namespace Loader
             }
         }
 
-        private static void BuildBytesData(Assembly assembly, string fileName, List<ExcelSheet> sheetList)
+        private static void BuildBytesData(Assembly assembly, string fileName, List<ExcelClass> sheetList)
         {
             Type listType = typeof(List<>);
 
-            foreach (ExcelSheet sheet in sheetList)
+            foreach (ExcelClass sheet in sheetList)
             {
                 //数据结构的类名
-                string className = "ThriftStruct." + sheet.SheetName;
-                string classArrayName = "ThriftStruct." + sheet.SheetName + "Array";
+                string className = "ThriftStruct." + sheet.className;
+                string classArrayName = "ThriftStruct." + sheet.className + "Array";
 
                 //生成 数据结构类型的List泛型集合
                 Type listTType = listType.MakeGenericType(assembly.GetType(className));

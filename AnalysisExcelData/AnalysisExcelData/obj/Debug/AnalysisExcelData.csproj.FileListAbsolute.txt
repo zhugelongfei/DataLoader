@@ -22,3 +22,11 @@ E:\LongFeiTools\AnalysisExcelData\AnalysisExcelData\bin\Debug\Thrift.dll
 E:\LongFeiTools\AnalysisExcelData\AnalysisExcelData\bin\Debug\ThriftScript.dll
 E:\LongFeiTools\AnalysisExcelData\AnalysisExcelData\bin\Debug\Thrift.pdb
 E:\LongFeiTools\AnalysisExcelData\AnalysisExcelData\obj\Debug\AnalysisExcelData.csprojResolveAssemblyReference.cache
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\obj\Debug\AnalysisExcelData.exe
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\obj\Debug\AnalysisExcelData.pdb
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\bin\Debug\AnalysisExcelData.exe
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\bin\Debug\AnalysisExcelData.pdb
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\bin\Debug\Thrift.dll
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\bin\Debug\Thrift.pdb
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\obj\Debug\AnalysisExcelData.csprojResolveAssemblyReference.cache
+E:\DataLoader\AnalysisExcelData\AnalysisExcelData\bin\Debug\ThriftScript.dll

@@ -11,16 +11,16 @@ namespace csharp ThriftStruct
  */
 
 #foreach($sheet in $sheetList)
-struct $sheet.SheetName
+struct $sheet.ClassName
 {
 #foreach($excelItem in $sheet.ExcelVarStructDic.Values)
 	$excelItem.CreateFieldString($count)
 #set($count=$count + 1)
 #end
 }
-struct ${sheet.SheetName}Array
+struct ${sheet.ClassName}Array
 {
-	1:list<$sheet.SheetName> valueList
+	1:list<$sheet.ClassName> valueList
 }
 
 #end

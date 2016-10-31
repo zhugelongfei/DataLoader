@@ -10,10 +10,10 @@ namespace csharp ThriftStruct
  */
 
 #foreach($diyVar in $varList.Values)
-/** $diyVar.VarAnnotation **/
+/** $diyVar.VarNote **/
 struct $diyVar.VarType
 {
-#foreach($variable in $diyVar.DiyVarType.VarDic.Values)
+#foreach($variable in $diyVar.DiyVarType.ExcelVarStructDic.Values)
 	$variable.CreateFieldString($count)
 #set($count=$count + 1)
 #end

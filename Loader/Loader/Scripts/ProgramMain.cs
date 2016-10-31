@@ -15,10 +15,10 @@ namespace Loader
             {
                 string[] excelFiles = Directory.GetFiles("..\\..\\Data\\ExcelFile\\", "*.xlsx");
                 List<string> thriftFileName = new List<string>(excelFiles.Length);
-                Dictionary<string, List<ExcelSheet>> allExcelData = new Dictionary<string, List<ExcelSheet>>(excelFiles.Length);
+                Dictionary<string, List<ExcelClass>> allExcelData = new Dictionary<string, List<ExcelClass>>(excelFiles.Length);
 
                 AnalysisExcelData analysisExcelTools = new AnalysisExcelData();
-
+                DataTableParser dataTabelTools = new DataTableParser();
                 NVelocityHelper velocity = new NVelocityHelper();
 
                 stopWatch.Start();
@@ -39,7 +39,7 @@ namespace Loader
                     //解析Excel数据为DataSet，然后解析为自定义结构
                     System.Data.DataSet dataSet = analysisExcelTools.LoadFile(excelFile);
                     stopWatch.Start();
-                    List<ExcelSheet> sheetList = DataTableRowUtils.AnalysisDataSetToSheetList(dataSet, diyStructDic);
+                    List<ExcelClass> sheetList = dataTabelTools.AnalysisDataSetToSheetList(dataSet, diyStructDic);
                     StopAndOutputTime("Read Excel File & Get All Data");
                     
                     //像模板引擎中注册键

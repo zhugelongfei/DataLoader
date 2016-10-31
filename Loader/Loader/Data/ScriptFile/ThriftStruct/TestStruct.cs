@@ -26,18 +26,18 @@ namespace ThriftStruct
   #endif
   public partial class TestStruct : TBase
   {
-    private int _a;
+    private int _A;
 
     public int A
     {
       get
       {
-        return _a;
+        return _A;
       }
       set
       {
-        __isset.a = true;
-        this._a = value;
+        __isset.A = true;
+        this._A = value;
       }
     }
 
@@ -47,7 +47,7 @@ namespace ThriftStruct
     [Serializable]
     #endif
     public struct Isset {
-      public bool a;
+      public bool A;
     }
 
     public TestStruct() {
@@ -96,8 +96,8 @@ namespace ThriftStruct
         TStruct struc = new TStruct("TestStruct");
         oprot.WriteStructBegin(struc);
         TField field = new TField();
-        if (__isset.a) {
-          field.Name = "a";
+        if (__isset.A) {
+          field.Name = "A";
           field.Type = TType.I32;
           field.ID = 1;
           oprot.WriteFieldBegin(field);
@@ -116,7 +116,7 @@ namespace ThriftStruct
     public override string ToString() {
       StringBuilder __sb = new StringBuilder("TestStruct(");
       bool __first = true;
-      if (__isset.a) {
+      if (__isset.A) {
         if(!__first) { __sb.Append(", "); }
         __first = false;
         __sb.Append("A: ");

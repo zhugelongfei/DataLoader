@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System;
 using System.IO;
+using System.Data;
+using System.Collections.Generic;
 using NPOI.SS.UserModel;
-using System;
 
 namespace Loader
 {
     public class AnalysisExcelData : IDisposable
     {
-        private IWorkbook _workBook;
+        private IWorkbook _workBook = null;
         private List<string> sheetNames = null;
 
         ~AnalysisExcelData()
