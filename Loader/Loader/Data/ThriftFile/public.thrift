@@ -8,3 +8,8 @@ namespace csharp ThriftStruct
  * Do not edit unless you are sure that you know what you are doning
  */
 
+/** (我是注释 **/
+struct TestStruct
+{
+	1:  i32   A
+}

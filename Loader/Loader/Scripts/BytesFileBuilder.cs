@@ -61,7 +61,6 @@ namespace Loader
                 using (FileStream fs = new FileStream(FilePathManager.BytesFilePath + fileName + ".bytes", FileMode.OpenOrCreate))
                 {
                     fs.Write(bytes, 0, bytes.Length);
-                    fs.Close();
                 }
             }
         }

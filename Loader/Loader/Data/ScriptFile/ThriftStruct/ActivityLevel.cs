@@ -35,7 +35,7 @@ namespace ThriftStruct
     private int _ActivityNormalShopSale;
     private int _ActivityAddDanceReward;
     private int _VipPriceSale;
-    private List<int> _VActivityRightDesc;
+    private List<ThriftStruct.TestStruct> _VActivityRightDesc;
 
     public int Level
     {
@@ -102,7 +102,7 @@ namespace ThriftStruct
       }
     }
 
-    public List<int> VActivityRightDesc
+    public List<ThriftStruct.TestStruct> VActivityRightDesc
     {
       get
       {
@@ -185,12 +185,13 @@ namespace ThriftStruct
             case 6:
               if (field.Type == TType.List) {
                 {
-                  VActivityRightDesc = new List<int>();
+                  VActivityRightDesc = new List<ThriftStruct.TestStruct>();
                   TList _list0 = iprot.ReadListBegin();
                   for( int _i1 = 0; _i1 < _list0.Count; ++_i1)
                   {
-                    int _elem2;
-                    _elem2 = iprot.ReadI32();
+                    ThriftStruct.TestStruct _elem2;
+                    _elem2 = new ThriftStruct.TestStruct();
+                    _elem2.Read(iprot);
                     VActivityRightDesc.Add(_elem2);
                   }
                   iprot.ReadListEnd();
@@ -266,10 +267,10 @@ namespace ThriftStruct
           field.ID = 6;
           oprot.WriteFieldBegin(field);
           {
-            oprot.WriteListBegin(new TList(TType.I32, VActivityRightDesc.Count));
-            foreach (int _iter3 in VActivityRightDesc)
+            oprot.WriteListBegin(new TList(TType.Struct, VActivityRightDesc.Count));
+            foreach (ThriftStruct.TestStruct _iter3 in VActivityRightDesc)
             {
-              oprot.WriteI32(_iter3);
+              _iter3.Write(oprot);
             }
             oprot.WriteListEnd();
           }

@@ -30,39 +30,57 @@ namespace Loader
             }
         }
 
-        /// <summary>
-        /// 初始化模板引擎
-        /// </summary>
-        public void InitTemplateEngine(string path)
+        private static VelocityEngine templateEngine = null;
+
+        public static VelocityEngine TemplateEngine
         {
-            try
+            get
             {
-                VelocityEngine templateEngine = new VelocityEngine();
-                templateEngine.SetProperty(RuntimeConstants.RESOURCE_LOADER, "file");
+                try
+                {
+                    if (templateEngine == null)
+                    {
+                        templateEngine = new VelocityEngine();
+                        templateEngine.SetProperty(RuntimeConstants.RESOURCE_LOADER, "file");
 
-                templateEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
-                templateEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
+                        templateEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
+                        templateEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
 
-                //如果设置了FILE_RESOURCE_LOADER_PATH属性，那么模板文件的基础路径就是基于这个设置的目录，否则默认当前运行目录
-                templateEngine.SetProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, AppDomain.CurrentDomain.BaseDirectory);
+                        //如果设置了FILE_RESOURCE_LOADER_PATH属性，那么模板文件的基础路径就是基于这个设置的目录，否则默认当前运行目录
+                        templateEngine.SetProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, AppDomain.CurrentDomain.BaseDirectory);
 
-                templateEngine.Init();
+                        templateEngine.Init();
+                    }
 
-                template = templateEngine.GetTemplate(path);
+                    return templateEngine;
+                }
+                catch (NVelocity.Exception.ResourceNotFoundException re)
+                {
+                    string error = string.Format("Cannot find template " + FilePathManager.templateFilePath);
+
+                    Console.WriteLine(error);
+                    throw new Exception(error, re);
+                }
+                catch (NVelocity.Exception.ParseErrorException pee)
+                {
+                    string error = string.Format("Syntax error in template " + FilePathManager.templateFilePath + ":" + pee.StackTrace);
+                    Console.WriteLine(error);
+                    throw new Exception(error, pee);
+                }
             }
-            catch (NVelocity.Exception.ResourceNotFoundException re)
-            {
-                string error = string.Format("Cannot find template " + FilePathManager.templateFilePath);
+        }
 
-                Console.WriteLine(error);
-                throw new Exception(error, re);
-            }
-            catch (NVelocity.Exception.ParseErrorException pee)
-            {
-                string error = string.Format("Syntax error in template " + FilePathManager.templateFilePath + ":" + pee.StackTrace);
-                Console.WriteLine(error);
-                throw new Exception(error, pee);
-            }
+        /// <summary>
+        /// 加载模板文件
+        /// </summary>
+        /// <param name="path">文件路径</param>
+        public static NVelocityHelper LoadTemplate(string path)
+        {
+            NVelocityHelper helper = new NVelocityHelper();
+
+            helper.template = TemplateEngine.GetTemplate(path);
+
+            return helper;
         }
 
         /// <summary>

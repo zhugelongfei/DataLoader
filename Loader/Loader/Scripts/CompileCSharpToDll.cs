@@ -68,7 +68,6 @@ public class CompileCSharpDll
 
         p.WaitForExit();
         p.Close();
-        p.Dispose();
 
         if (log != null)
             log(outputStr);

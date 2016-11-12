@@ -19,10 +19,9 @@ namespace Loader
 
                 AnalysisExcelData analysisExcelTools = new AnalysisExcelData();
                 DataTableParser dataTabelTools = new DataTableParser();
-                NVelocityHelper velocity = new NVelocityHelper();
 
                 stopWatch.Start();
-                velocity.InitTemplateEngine(FilePathManager.templateFilePath);
+                NVelocityHelper velocity = NVelocityHelper.LoadTemplate(FilePathManager.templateFilePath);
                 StopAndOutputTime("Init Template Engine");
 
                 Dictionary<string, ExcelVariable> diyStructDic = new Dictionary<string, ExcelVariable>();
@@ -34,14 +33,14 @@ namespace Loader
                     //文件名字，不包含路径，后缀
                     int index = excelFile.LastIndexOf("\\");
                     string outputFileName = excelFile.Substring(index + 1, excelFile.Length - index - 1 - 5);
-                    Console.WriteLine(outputFileName);
+                    Console.WriteLine("文件名（无路径，无后缀）："+outputFileName);
 
                     //解析Excel数据为DataSet，然后解析为自定义结构
                     System.Data.DataSet dataSet = analysisExcelTools.LoadFile(excelFile);
                     stopWatch.Start();
                     List<ExcelClass> sheetList = dataTabelTools.AnalysisDataSetToSheetList(dataSet, diyStructDic);
                     StopAndOutputTime("Read Excel File & Get All Data");
-                    
+
                     //像模板引擎中注册键
                     velocity.ClearKeyValue();
                     velocity.AddKeyValue("sheetList", sheetList);
@@ -55,8 +54,9 @@ namespace Loader
                 }
 
                 //生成public.thrift文件
-                NVelocityHelper pubVelocity = new NVelocityHelper();
-                pubVelocity.InitTemplateEngine("..\\..\\Data\\TemplateFile\\PublicStructTemplate.velocity");
+                stopWatch.Start();
+                NVelocityHelper pubVelocity = NVelocityHelper.LoadTemplate("..\\..\\Data\\TemplateFile\\PublicStructTemplate.velocity");
+                StopAndOutputTime("Second load template");
                 pubVelocity.AddKeyValue("varList", diyStructDic);
                 string pubThriftName = pubVelocity.ExecuteFile("public");
                 CSharpFileBuilder.BuildAllCsharpFile(pubThriftName);

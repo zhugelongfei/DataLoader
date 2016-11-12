@@ -10,9 +10,9 @@ E:\LongFeiTools\Loader\Loader\bin\Debug\Loader.pdb
 E:\LongFeiTools\Loader\Loader\bin\Debug\Thrift.dll
 E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.exe
 E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.pdb
-E:\DataLoader\Loader\Loader\obj\Debug\Loader.exe
-E:\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
 E:\DataLoader\Loader\Loader\bin\Debug\Loader.exe
 E:\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
 E:\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
+E:\DataLoader\Loader\Loader\obj\Debug\Loader.exe
+E:\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache

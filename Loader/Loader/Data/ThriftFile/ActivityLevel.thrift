@@ -16,7 +16,7 @@ struct ActivityLevel
 	3:  i32   ActivityNormalShopSale
 	4:  i32   ActivityAddDanceReward
 	5:  i32   VipPriceSale
-	6:  list<i32>   VActivityRightDesc
+	6:  list<public.TestStruct>   VActivityRightDesc
 }
 struct ActivityLevelArray
 {

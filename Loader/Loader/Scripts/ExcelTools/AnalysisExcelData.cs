@@ -6,14 +6,17 @@ using NPOI.SS.UserModel;
 
 namespace Loader
 {
-    public class AnalysisExcelData : IDisposable
+    public class AnalysisExcelData
     {
         private IWorkbook _workBook = null;
         private List<string> sheetNames = null;
 
         ~AnalysisExcelData()
         {
-            Dispose();
+            //因为这个类不是自己写的，而且这个对象有做过流操作，所以在这里关闭对象，以防无法释放资源
+            if (_workBook != null)
+                _workBook.Close();
+            _workBook = null;
         }
 
         #region Excel信息
@@ -161,13 +164,5 @@ namespace Loader
         }
 
         #endregion
-
-        public void Dispose()
-        {
-            //因为这个类不是自己写的，而且这个对象有做过流操作，所以在这里关闭对象，以防无法释放资源
-            if (_workBook != null)
-                _workBook.Close();
-            _workBook = null;
-        }
     }
 }
