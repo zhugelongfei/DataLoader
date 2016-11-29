@@ -79,6 +79,10 @@
     <Compile Include="Scripts\CSharpFileBuilder.cs" />
     <Compile Include="Scripts\ExcelTools\DataTableParser.cs" />
     <Compile Include="Scripts\ExcelTools\AnalysisExcelData.cs" />
+    <Compile Include="Scripts\Struct\EBaseStruct.cs" />
+    <Compile Include="Scripts\Struct\EClass.cs" />
+    <Compile Include="Scripts\Struct\EListVariable.cs" />
+    <Compile Include="Scripts\Struct\EVariable.cs" />
     <Compile Include="Scripts\Struct\ExcelVariable.cs" />
     <Compile Include="Scripts\Struct\ExcelClass.cs" />
     <Compile Include="Scripts\FilePathManager.cs" />
@@ -97,11 +101,11 @@
   <ItemGroup>
     <Content Include="bitbug_favicon.ico" />
     <Content Include="Data\Lib\Thrift.dll" />
-    <Content Include="Data\Result\ThriftScript.dll" />
     <Content Include="Data\Tools\thrift-0.9.3.exe" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Bytes\" />
+    <Folder Include="Data\Result\" />
     <Folder Include="Data\ScriptFile\ThriftStruct\" />
     <Folder Include="Data\ThriftFile\" />
   </ItemGroup>

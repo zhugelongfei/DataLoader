@@ -10,7 +10,7 @@ namespace Loader
     public class BytesFileBuilder
     {
         public static Assembly assembly;
-        public static void BuildAllData(Dictionary<string, List<ExcelClass>> allExcelData)
+        public static void BuildAllData(Dictionary<string, List<EClass>> allExcelData)
         {
             assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
 
@@ -21,32 +21,25 @@ namespace Loader
             }
         }
 
-        private static void BuildBytesData(Assembly assembly, string fileName, List<ExcelClass> sheetList)
+        private static void BuildBytesData(Assembly assembly, string fileName, List<EClass> sheetList)
         {
             Type listType = typeof(List<>);
 
-            foreach (ExcelClass sheet in sheetList)
+            foreach (EClass sheet in sheetList)
             {
                 //数据结构的类名
-                string className = "ThriftStruct." + sheet.className;
-                string classArrayName = "ThriftStruct." + sheet.className + "Array";
+                string className = "ThriftStruct." + sheet.name;
+                string classArrayName = "ThriftStruct." + sheet.name + "Array";
 
                 //生成 数据结构类型的List泛型集合
                 Type listTType = listType.MakeGenericType(assembly.GetType(className));
                 IList listInstance = (IList)Activator.CreateInstance(listTType);
 
                 //生成数据对象，并存储信息
-                for (int i = 0; i < sheet.GetDataRowCount(); i++)
+                for (int i = 0; i < sheet.rowDataCount; i++)
                 {
-                    object sheetObj = assembly.CreateInstance(className);
-
-                    //获取数据对象的所有属性，赋值
-                    PropertyInfo[] propertyInfoArray = sheetObj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-                    foreach (var item in propertyInfoArray)
-                    {
-                        item.SetValue(sheetObj, sheet.GetVariableValueByVarNameAndRow(item.Name, i), null);
-                    }
-                    listInstance.Add(sheetObj);
+                    //生成对象数据，存储到List中
+                    listInstance.Add(sheet.GetDataByRowIndex(i));
                 }
 
                 //创建数据对象的Array对象，存储数据

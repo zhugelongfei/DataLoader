@@ -16,3 +16,15 @@ E:\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.exe
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+F:\Git Repository\DataLoader\Loader\Loader\obj\Debug\Loader.exe
+F:\Git Repository\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
+F:\Git Repository\DataLoader\Loader\Loader\bin\Debug\Loader.exe
+F:\Git Repository\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
+F:\Git Repository\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
+F:\Git Repository\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+F:\DataLoader\Loader\Loader\obj\Debug\Loader.exe
+F:\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
+F:\DataLoader\Loader\Loader\bin\Debug\Loader.exe
+F:\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
+F:\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
+F:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache

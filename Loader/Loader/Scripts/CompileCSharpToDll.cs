@@ -4,6 +4,7 @@ using System.Text;
 public class CompileCSharpDll
 {
     public delegate void Logger(string log);
+
     public class CompileFileInfo
     {
         //编译工具路径

@@ -19,7 +19,7 @@ namespace ThriftStruct
 {
 
   /// <summary>
-  /// (我是注释 *
+  /// 我是注释
   /// </summary>
   #if !SILVERLIGHT
   [Serializable]
