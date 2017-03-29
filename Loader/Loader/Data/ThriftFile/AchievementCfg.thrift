@@ -16,8 +16,3 @@ struct AchievementCfg
 	3:  i32   LimitIDFemale
 	4:  i32   Scene
 }
-struct AchievementCfgArray
-{
-	1:list<AchievementCfg> valueList
-}
-

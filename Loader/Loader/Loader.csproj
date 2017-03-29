@@ -64,14 +64,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="Thrift, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Thrift.dll</HintPath>
-    </Reference>
-    <Reference Include="ThriftBytesDataProcessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ThriftBytesDataProcessor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scripts\BytesFileBuilder.cs" />
@@ -108,6 +100,16 @@
     <Folder Include="Data\Result\" />
     <Folder Include="Data\ScriptFile\ThriftStruct\" />
     <Folder Include="Data\ThriftFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThriftBytesDataProcessor\ThriftSeriable.csproj">
+      <Project>{d7541b95-31e4-4bd2-bafe-324f21ff947f}</Project>
+      <Name>ThriftSeriable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Thrift\Thrift.csproj">
+      <Project>{499eb63c-d74c-47e8-ae48-a2fc94538e9d}</Project>
+      <Name>Thrift</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

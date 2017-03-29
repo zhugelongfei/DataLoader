@@ -1,0 +1,4 @@
+F:\SVNProject\DataLoader\Loader\Thrift\bin\Debug\Thrift.dll
+F:\SVNProject\DataLoader\Loader\Thrift\bin\Debug\Thrift.pdb
+F:\SVNProject\DataLoader\Loader\Thrift\obj\Debug\Thrift.dll
+F:\SVNProject\DataLoader\Loader\Thrift\obj\Debug\Thrift.pdb

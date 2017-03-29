@@ -18,8 +18,3 @@ struct ActivityLevel
 	5:  i32   VipPriceSale
 	6:  list<public.TestStruct>   VActivityRightDesc
 }
-struct ActivityLevelArray
-{
-	1:list<ActivityLevel> valueList
-}
-

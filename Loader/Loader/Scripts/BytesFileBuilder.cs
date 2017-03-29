@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
@@ -27,33 +26,28 @@ namespace Loader
 
             foreach (EClass sheet in sheetList)
             {
-                //数据结构的类名
-                string className = "ThriftStruct." + sheet.name;
-                string classArrayName = "ThriftStruct." + sheet.name + "Array";
-
-                //生成 数据结构类型的List泛型集合
-                Type listTType = listType.MakeGenericType(assembly.GetType(className));
-                IList listInstance = (IList)Activator.CreateInstance(listTType);
-
-                //生成数据对象，并存储信息
-                for (int i = 0; i < sheet.rowDataCount; i++)
-                {
-                    //生成对象数据，存储到List中
-                    listInstance.Add(sheet.GetDataByRowIndex(i));
-                }
-
-                //创建数据对象的Array对象，存储数据
-                object sheetArrayObj = assembly.CreateInstance(classArrayName);
-                PropertyInfo fieldCollition = sheetArrayObj.GetType().GetProperty("ValueList", BindingFlags.Public | BindingFlags.Instance);
-                fieldCollition.SetValue(sheetArrayObj, listInstance, null);
-
-                //将对象序列化
-                byte[] bytes = ClientThriftSerialize.Instance.Serialize(sheetArrayObj as TBase);
-
                 //存储到目标文件
                 using (FileStream fs = new FileStream(FilePathManager.BytesFilePath + fileName + ".bytes", FileMode.OpenOrCreate))
                 {
-                    fs.Write(bytes, 0, bytes.Length);
+                    //写入对象数量 int
+                    byte[] objCount = System.BitConverter.GetBytes(sheet.rowDataCount);
+                    fs.Write(objCount, 0, objCount.Length);
+
+                    //生成数据对象，并存储信息
+                    for (int i = 0; i < sheet.rowDataCount; i++)
+                    {
+                        //生成对象数据
+                        TBase dataObj = sheet.GetDataByRowIndex(i) as TBase;
+
+                        byte[] dataBytes = ClientThriftSerialize.Instance.Serialize(dataObj);
+
+                        //写入此对象的长度 int
+                        byte[] objLength = System.BitConverter.GetBytes(dataBytes.Length);
+                        fs.Write(objLength, 0, objLength.Length);
+
+                        fs.Write(dataBytes, 0, dataBytes.Length);
+                        fs.Flush();
+                    }
                 }
             }
         }

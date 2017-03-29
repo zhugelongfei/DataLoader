@@ -1,0 +1,13 @@
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\bin\Debug\ThriftBytesDataProcessor.pdb
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\bin\Debug\Thrift.dll
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.pdb
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\bin\Debug\ThriftBytesDataProcessor.dll
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.dll
+E:\ThriftBytesDataProcessor\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.csprojResolveAssemblyReference.cache
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\ThriftBytesDataProcessor.dll
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\ThriftBytesDataProcessor.pdb
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\Thrift.dll
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\Thrift.pdb
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.csprojResolveAssemblyReference.cache
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.dll
+F:\SVNProject\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftBytesDataProcessor.pdb

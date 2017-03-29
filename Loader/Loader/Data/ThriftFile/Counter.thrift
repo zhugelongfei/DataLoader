@@ -15,8 +15,3 @@ struct Counter
 	2:  i32   GameTimesIntCountID
 	3:  i32   DailyIBGiftIntCountID
 }
-struct CounterArray
-{
-	1:list<Counter> valueList
-}
-

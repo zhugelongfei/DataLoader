@@ -28,8 +28,3 @@ struct RoomAction
 	15:  i32   MoneyCost
 	16:  string   UnlockMessage
 }
-struct RoomActionArray
-{
-	1:list<RoomAction> valueList
-}
-

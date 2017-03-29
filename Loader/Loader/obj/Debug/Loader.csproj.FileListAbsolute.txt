@@ -28,3 +28,12 @@ F:\DataLoader\Loader\Loader\bin\Debug\Loader.exe
 F:\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
 F:\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
 F:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\Loader.exe
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\ThriftSeriable.dll
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\ThriftSeriable.pdb
+F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\Thrift.pdb
+F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.exe
+F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.pdb

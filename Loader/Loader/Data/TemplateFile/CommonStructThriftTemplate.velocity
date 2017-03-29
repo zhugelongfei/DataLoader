@@ -18,9 +18,4 @@ struct $sheet.NV_Name
 #set($count=$count + 1)
 #end
 }
-struct ${sheet.NV_Name}Array
-{
-	1:list<$sheet.NV_Name> valueList
-}
-
 #end

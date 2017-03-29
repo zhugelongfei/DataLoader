@@ -1,9 +1,0 @@
-E:\Thrift\Thrift\bin\Debug\Thrift.dll
-E:\Thrift\Thrift\bin\Debug\Thrift.pdb
-E:\Thrift\Thrift\obj\Debug\Thrift.dll
-E:\Thrift\Thrift\obj\Debug\Thrift.pdb
-E:\LongFeiTools\Loader\Thrift\Thrift\bin\Debug\Thrift.dll
-E:\LongFeiTools\Loader\Thrift\Thrift\bin\Debug\Thrift.pdb
-E:\LongFeiTools\Loader\Thrift\Thrift\obj\Debug\Thrift.csprojResolveAssemblyReference.cache
-E:\LongFeiTools\Loader\Thrift\Thrift\obj\Debug\Thrift.dll
-E:\LongFeiTools\Loader\Thrift\Thrift\obj\Debug\Thrift.pdb
