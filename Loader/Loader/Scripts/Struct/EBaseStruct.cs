@@ -3,24 +3,25 @@ using System.Collections.Generic;
 
 public class EBaseStruct : EVariable
 {
-    public List<string> valueList = null;
+    private List<string> valueList = null;
 
+    /// <summary>
+    /// 构造函数：对象创建时，确定数据数量
+    /// </summary>
+    public EBaseStruct(int count)
+    {
+        valueList = new List<string>(count);
+    }
+
+    /// <summary>
+    /// 添加一个数据
+    /// </summary>
     public void AddValue(string data)
     {
         if (data == null)
             return;
 
         valueList.Add(data);
-    }
-
-    public EBaseStruct Clone()
-    {
-        EBaseStruct info = new EBaseStruct();
-        info.name = name;
-        info.type = type;
-        info.note = note;
-
-        return info;
     }
 
     /// <summary>
@@ -36,7 +37,7 @@ public class EBaseStruct : EVariable
         strCache.Append(":  ");
 
         //2：变量类型
-        strCache.Append(ConvertThriftTypeByVarType());
+        strCache.Append(GetThriftTypeByVarType());
 
         //3：变量名
         strCache.Append("   ");
@@ -51,9 +52,9 @@ public class EBaseStruct : EVariable
     public override object GetDataByRowIndex(int index)
     {
         //普通变量
-        if (valueList != null && valueList.Count > index)
+        if (valueList.Count > index)
         {
-            return ConvertValueByType(valueList[index]);
+            return GetValueByType(valueList[index]);
         }
         return null;
     }

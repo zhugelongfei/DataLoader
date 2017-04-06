@@ -1,0 +1,34 @@
+// LoaderRegKey.idl : LoaderRegKey的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(LoaderRegKey.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(49148948-C438-4886-91FB-F22BF566C6EA),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IExcelRegShlExt : IDispatch{
+};
+[
+	uuid(6504567C-D4FA-475A-8402-27675238BC33),
+	version(1.0),
+]
+library LoaderRegKeyLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(03F1F93A-290C-4DCD-99BD-B4F7685FD873)		
+	]
+	coclass ExcelRegShlExt
+	{
+		[default] interface IExcelRegShlExt;
+	};
+};
+

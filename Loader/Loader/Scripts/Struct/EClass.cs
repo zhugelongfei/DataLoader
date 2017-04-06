@@ -4,22 +4,46 @@ using System.Reflection;
 
 public class EClass : EVariable
 {
-    public Dictionary<string, EVariable> varDic = null;
+    private Dictionary<string, EVariable> varDic = null;
+    private List<EClass> diyClassList = null;
     public int rowDataCount = 0;
 
     public Dictionary<string, EVariable> NV_ExcelVarStructDic { get { return varDic; } }
+    public List<EClass> NV_DiyClassList { get { return diyClassList; } }
 
     public EClass(int count)
     {
         varDic = new Dictionary<string, EVariable>(count);
     }
 
-    public void AddValue(EVariable data)
+    /// <summary>
+    /// 添加字段到类结构中
+    /// </summary>
+    /// <param name="data"></param>
+    public void AddVariable(EVariable data)
     {
         if (data == null)
             return;
 
         varDic.Add(data.name, data);
+    }
+
+    /// <summary>
+    /// 添加自定义类型（这个表中创建的自定义类型结构）
+    /// </summary>
+    public void AddDiyClass(EClass cls)
+    {
+        if (diyClassList == null)
+            diyClassList = new List<EClass>();
+        diyClassList.Add(cls);
+    }
+
+    /// <summary>
+    /// 是否包含有效数据
+    /// </summary>
+    public bool IsHasVaildData()
+    {
+        return varDic != null && varDic.Count > 0;
     }
 
     /// <summary>
@@ -68,18 +92,14 @@ public class EClass : EVariable
     /// <returns>数据</returns>
     public override object GetDataByRowIndex(int index)
     {
-        object diyClassObj = Loader.BytesFileBuilder.assembly.CreateInstance("ThriftStruct." + type);
-        if (diyClassObj == null)
-        {
-            System.Console.WriteLine(type + " error");
-            return null;
-        }
+        object dataObj = Loader.BytesFileBuilder.CreateInstance(type);
+
         //获取数据对象的所有属性，赋值
-        PropertyInfo[] propertyInfoArray = diyClassObj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        PropertyInfo[] propertyInfoArray = dataObj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
         foreach (var item in propertyInfoArray)
         {
-            item.SetValue(diyClassObj, GetVariableValueByVarNameAndRow(item.Name, index), null);
+            item.SetValue(dataObj, GetVariableValueByVarNameAndRow(item.Name, index), null);
         }
-        return diyClassObj;
+        return dataObj;
     }
 }

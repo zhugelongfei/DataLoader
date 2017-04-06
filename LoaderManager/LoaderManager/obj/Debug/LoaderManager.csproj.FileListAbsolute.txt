@@ -1,0 +1,5 @@
+F:\LoaderManager\LoaderManager\bin\Debug\LoaderManager.exe
+F:\LoaderManager\LoaderManager\bin\Debug\LoaderManager.pdb
+F:\LoaderManager\LoaderManager\obj\Debug\LoaderManager.exe
+F:\LoaderManager\LoaderManager\obj\Debug\LoaderManager.pdb
+F:\LoaderManager\LoaderManager\obj\Debug\LoaderManager.csprojResolveAssemblyReference.cache

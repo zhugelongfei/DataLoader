@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Text;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 public class EListVariable : EVariable
 {
@@ -19,61 +19,78 @@ public class EListVariable : EVariable
         varList = new List<EVariable>(count);
     }
 
-    public void AddValue(EVariable data)
+    public void AddVariable(EVariable data)
     {
         if (!varList.Contains(data))
             varList.Add(data);
     }
 
+    /// <summary>
+    /// 添加字段到自定义类中（确定自定义类结构）
+    /// </summary>
     public void AddVarToDiyClass(EBaseStruct data)
     {
         if (isBaseType)
         {
             type = data.type;
-            AddValue(data);
+            AddVariable(data);
         }
         else
         {
-            if (diyClass != null && data != null)
+            if (diyClass == null)
             {
-                diyClass.AddValue(data);
-                diyClassVarList[diyVarCount] = data;
+                //创建一个类，承载这个自定义的类型信息
+                diyClass = new EClass(5);
+                diyClass.name = name;
+                diyClass.type = type;
+                diyClass.note = note;
 
-                diyVarCount++;
+                AddVariable(diyClass);
             }
+
+            //将变量加入自定义类中，并记录类的结构信息和数量
+            diyClass.AddVariable(data);
+            diyClassVarList[diyVarCount] = data;
+            diyVarCount++;
         }
     }
 
-    public void AddVarToCopyClass(List<string> data)
+    /// <summary>
+    /// 添加字段到复制类中（自定义类结构已确定，开始循环）
+    /// </summary>
+    public void AddVarToCopyClass(EBaseStruct variable)
     {
-        //证明是新的一个Copy类
         if (isBaseType)
         {
             //基本数据类型
-            EBaseStruct newVar = new EBaseStruct();
-            newVar.name = name;
-            newVar.type = type;
-            newVar.note = note;
-            newVar.valueList = data;
-            AddValue(newVar);
+            variable.type = type;
+            AddVariable(variable);
         }
         else
         {
+            //计算字段循环索引
             curCopyIndex %= diyVarCount;
             if (curCopyIndex == 0)
             {
+                //证明需要创建一个新的对象，来存储数据
                 copyClass = new EClass(diyVarCount);
                 copyClass.name = name;
                 copyClass.type = type;
                 copyClass.note = note;
-                AddValue(copyClass);
+                AddVariable(copyClass);
             }
-            EBaseStruct varBase = diyClassVarList[curCopyIndex].Clone();
-            varBase.valueList = data;
 
+            //根据字段索引，找到对应的字段结构信息，并赋值
+            EBaseStruct srcStruct = diyClassVarList[curCopyIndex];
+            variable.name = srcStruct.name;
+            variable.type = srcStruct.type;
+            variable.note = srcStruct.note;
+
+            //将字段加入到对象中
             if (copyClass != null)
-                copyClass.AddValue(varBase);
+                copyClass.AddVariable(variable);
 
+            //字段索引递增
             curCopyIndex++;
         }
     }
@@ -83,15 +100,6 @@ public class EListVariable : EVariable
     /// </summary>
     public EClass GetDiyClassType()
     {
-        if (diyClass == null)
-        {
-            diyClass = new EClass(5);
-
-            diyClass.name = name;
-            diyClass.type = type;
-            diyClass.note = note;
-        }
-
         return diyClass;
     }
 
@@ -112,11 +120,10 @@ public class EListVariable : EVariable
         //List自定义数据是结构
         if (isBaseType)
         {
-            strCache.Append(ConvertThriftTypeByVarType());
+            strCache.Append(GetThriftTypeByVarType());
         }
         else
         {
-            strCache.Append("public.");
             strCache.Append(type);
         }
         strCache.Append(">");
@@ -148,5 +155,17 @@ public class EListVariable : EVariable
         }
 
         return listInstance;
+    }
+
+    /// <summary>
+    /// List读取完毕后，释放一些临时变量
+    /// </summary>
+    public void ClearData()
+    {
+        diyClass = null;
+        copyClass = null;
+        diyVarCount = 0;
+        curCopyIndex = 0;
+        diyClassVarList = null;
     }
 }

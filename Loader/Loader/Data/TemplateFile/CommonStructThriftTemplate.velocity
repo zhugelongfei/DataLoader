@@ -1,4 +1,4 @@
-﻿include "public.thrift"  
+﻿##include "public.thrift"
 namespace csharp ThriftStruct
 
 /**
@@ -10,6 +10,18 @@ namespace csharp ThriftStruct
  */
 
 #foreach($sheet in $sheetList)
+#foreach($diyVar in $sheet.NV_DiyClassList)
+#set($count=1)
+/** $diyVar.NV_Note */
+struct $diyVar.NV_Type
+{
+#foreach($variable in $diyVar.NV_ExcelVarStructDic.Values)
+	$variable.NV_ThriftFieldStatementName($count)
+#set($count=$count + 1)
+#end
+}
+
+#end
 #set($count=1)
 struct $sheet.NV_Name
 {

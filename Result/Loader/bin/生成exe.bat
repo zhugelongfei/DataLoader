@@ -1,0 +1,2 @@
+set current_dir=F:\SVNProject\DataLoader\Loader\Loader\bin\Debug
+call D:\ILMerge\ilmerge.exe /ndebug /target:exe /out:newtool.exe /log Loader.exe /log ICSharpCode.SharpZipLib.dll /log NPOI.dll /log NPOI.OOXML.dll /log NPOI.OpenXml4Net.dll /log NPOI.OpenXmlFormats.dll /log NVelocity.dll /log Thrift.dll /log ThriftSeriable.dll /targetplatform:v4

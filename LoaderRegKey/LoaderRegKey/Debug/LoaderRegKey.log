@@ -1,0 +1,42 @@
+﻿  Processing .\LoaderRegKey.idl
+  LoaderRegKey.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.idl
+  oaidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\objidl.idl
+  objidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\unknwn.idl
+  unknwn.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypes.idl
+  wtypes.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypesbase.idl
+  wtypesbase.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\basetsd.h
+  basetsd.h
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\guiddef.h
+  guiddef.h
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.idl
+  ocidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oleidl.idl
+  oleidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\servprov.idl
+  servprov.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\urlmon.idl
+  urlmon.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\msxml.idl
+  msxml.idl
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.acf
+  oaidl.acf
+  Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.acf
+  ocidl.acf
+  stdafx.cpp
+  dllmain.cpp
+  LoaderRegKey.cpp
+  ExcelRegShlExt.cpp
+  正在生成代码...
+  LoaderRegKey_i.c
+    正在创建库 F:\C++\LoaderRegKey\Debug\LoaderRegKey.lib 和对象 F:\C++\LoaderRegKey\Debug\LoaderRegKey.exp
+ExcelRegShlExt.obj : error LNK2001: 无法解析的外部符号 "public: virtual long __stdcall CExcelRegShlExt::Initialize(struct _ITEMIDLIST const *,struct IDataObject *,struct HKEY__ *)" (?Initialize@CExcelRegShlExt@@UAGJPBU_ITEMIDLIST@@PAUIDataObject@@PAUHKEY__@@@Z)
+ExcelRegShlExt.obj : error LNK2001: 无法解析的外部符号 "public: virtual long __stdcall CExcelRegShlExt::QueryContextMenu(struct HMENU__ *,unsigned int,unsigned int,unsigned int,unsigned int)" (?QueryContextMenu@CExcelRegShlExt@@UAGJPAUHMENU__@@IIII@Z)
+ExcelRegShlExt.obj : error LNK2001: 无法解析的外部符号 "public: virtual long __stdcall CExcelRegShlExt::GetCommandString(unsigned int,unsigned int,unsigned int *,char *,unsigned int)" (?GetCommandString@CExcelRegShlExt@@UAGJIIPAIPADI@Z)
+ExcelRegShlExt.obj : error LNK2001: 无法解析的外部符号 "public: virtual long __stdcall CExcelRegShlExt::InvokeCommand(struct _CMINVOKECOMMANDINFO *)" (?InvokeCommand@CExcelRegShlExt@@UAGJPAU_CMINVOKECOMMANDINFO@@@Z)
+F:\C++\LoaderRegKey\Debug\LoaderRegKey.dll : fatal error LNK1120: 4 个无法解析的外部命令

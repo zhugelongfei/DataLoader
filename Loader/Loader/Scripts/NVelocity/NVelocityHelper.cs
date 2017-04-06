@@ -105,11 +105,6 @@ namespace Loader
             {
                 fileName = FilePathManager.outputFilePath + outputFileName + FilePathManager.outputFileExtension;
 
-                if (!string.IsNullOrEmpty(FilePathManager.outputFilePath) && !Directory.Exists(FilePathManager.outputFilePath))
-                {
-                    Directory.CreateDirectory(FilePathManager.outputFilePath);
-                }
-
                 InitContext();
                 using (StreamWriter writer = new StreamWriter(fileName, false))
                 {

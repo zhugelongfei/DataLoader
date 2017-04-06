@@ -8,29 +8,22 @@ namespace Loader
     {
         private static Process p;
 
-        public static void BuildAllCsharpFile(string thriftFileName)
+        public static void BuildAllCsharpFile(List<string> thriftFileName,System.Action<string> log)
         {
             Init();
-            string args = @"-out " + FilePathManager.GetObsolutePathByRelativePath(FilePathManager.ScriptOutPath)
-                + " -gen csharp ";
-
-            //生成C#文件
-            BuildCsharpFile(args + thriftFileName);
-            Close();
-        }
-
-        public static void BuildAllCsharpFile(List<string> thriftFileName)
-        {
-            Init();
-            string args = @"-out " + FilePathManager.GetObsolutePathByRelativePath(FilePathManager.ScriptOutPath)
-                + " -gen csharp ";
+            string args = @"-out " + GetScriptOutPath() + " -gen csharp ";
 
             foreach (string fileName in thriftFileName)
             {
                 //生成C#文件
-                BuildCsharpFile(args + fileName);
+                BuildCsharpFile(args + fileName, log);
             }
             Close();
+        }
+
+        private static string GetScriptOutPath()
+        {
+            return FilePathManager.GetObsolutePathByRelativePath(FilePathManager.ScriptOutPath);
         }
 
         private static void Init()
@@ -45,7 +38,7 @@ namespace Loader
             p.StartInfo.StandardOutputEncoding = Encoding.Default;
         }
 
-        private static void BuildCsharpFile(string args)
+        private static void BuildCsharpFile(string args, System.Action<string> log)
         {
             p.StartInfo.Arguments = args;
 
@@ -56,20 +49,31 @@ namespace Loader
                 return;
             }
 
-            string outputStr = p.StandardOutput.ReadToEnd();
-
-            if (!string.IsNullOrEmpty(outputStr))
-            {
-                System.Console.WriteLine("Thrift Error is :" + outputStr);
-            }
-
             p.WaitForExit();
+
+            if (log != null)
+            {
+                //程序输出
+                string outputStr = p.StandardOutput.ReadToEnd();
+                if (!string.IsNullOrEmpty(outputStr))
+                {
+                    log("Thrift -- Output :");
+                    log(outputStr);
+                }
+
+                //程序错误
+                string errorStr = p.StandardError.ReadToEnd();
+                if (!string.IsNullOrEmpty(errorStr))
+                {
+                    log("Thrift -- Error :");
+                    log(errorStr);
+                }
+            }
         }
 
         private static void Close()
         {
             p.Close();
-            p.Dispose();
             p = null;
         }
 

@@ -1,10 +1,8 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
+using System.Diagnostics;
 
 public class CompileCSharpDll
 {
-    public delegate void Logger(string log);
-
     public class CompileFileInfo
     {
         //编译工具路径
@@ -23,12 +21,11 @@ public class CompileCSharpDll
         public string dllOutPath;
     }
 
-    public static void Compile(CompileFileInfo compInfo, Logger log)
+    public static void Compile(CompileFileInfo compInfo, System.Action<string> log)
     {
         if (compInfo == null)
-        {
             return;
-        }
+
         StringBuilder strCache = new StringBuilder(300);
         //编译类型
         strCache.Append("/t:library ");
@@ -65,12 +62,26 @@ public class CompileCSharpDll
                 log("CSC 启动失败");
         }
 
-        string outputStr = p.StandardOutput.ReadToEnd();
-
         p.WaitForExit();
-        p.Close();
 
         if (log != null)
-            log(outputStr);
+        {
+            //程序输出
+            string outputStr = p.StandardOutput.ReadToEnd();
+            if (!string.IsNullOrEmpty(outputStr))
+            {
+                log("Compile CSharp Dll -- Output :");
+                log(outputStr);
+            }
+
+            //程序错误
+            string errorStr = p.StandardError.ReadToEnd();
+            if (!string.IsNullOrEmpty(errorStr))
+            {
+                log("Compile CSharp Dll -- Error :" + errorStr);
+            }
+        }
+
+        p.Close();
     }
 }

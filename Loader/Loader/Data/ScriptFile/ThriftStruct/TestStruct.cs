@@ -27,6 +27,7 @@ namespace ThriftStruct
   public partial class TestStruct : TBase
   {
     private int _A;
+    private short _B;
 
     public int A
     {
@@ -41,6 +42,19 @@ namespace ThriftStruct
       }
     }
 
+    public short B
+    {
+      get
+      {
+        return _B;
+      }
+      set
+      {
+        __isset.B = true;
+        this._B = value;
+      }
+    }
+
 
     public Isset __isset;
     #if !SILVERLIGHT
@@ -48,6 +62,7 @@ namespace ThriftStruct
     #endif
     public struct Isset {
       public bool A;
+      public bool B;
     }
 
     public TestStruct() {
@@ -71,6 +86,13 @@ namespace ThriftStruct
             case 1:
               if (field.Type == TType.I32) {
                 A = iprot.ReadI32();
+              } else { 
+                TProtocolUtil.Skip(iprot, field.Type);
+              }
+              break;
+            case 2:
+              if (field.Type == TType.I16) {
+                B = iprot.ReadI16();
               } else { 
                 TProtocolUtil.Skip(iprot, field.Type);
               }
@@ -104,6 +126,14 @@ namespace ThriftStruct
           oprot.WriteI32(A);
           oprot.WriteFieldEnd();
         }
+        if (__isset.B) {
+          field.Name = "B";
+          field.Type = TType.I16;
+          field.ID = 2;
+          oprot.WriteFieldBegin(field);
+          oprot.WriteI16(B);
+          oprot.WriteFieldEnd();
+        }
         oprot.WriteFieldStop();
         oprot.WriteStructEnd();
       }
@@ -121,6 +151,12 @@ namespace ThriftStruct
         __first = false;
         __sb.Append("A: ");
         __sb.Append(A);
+      }
+      if (__isset.B) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("B: ");
+        __sb.Append(B);
       }
       __sb.Append(")");
       return __sb.ToString();

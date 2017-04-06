@@ -41,7 +41,7 @@ namespace Loader
         /// </summary>
         /// <param name="setData">Excel数据</param>
         /// <param name="diyStructDic">所有Excel中使用的自定义数据结构</param>
-        public List<EClass> AnalysisDataSetToSheetList(DataSet setData, Dictionary<string, EClass> diyStructDic)
+        public List<EClass> AnalysisDataSetToSheetList(DataSet setData)
         {
             if (setData == null || setData.Tables == null)
                 throw new System.Exception("DataSet is null or tables is null");
@@ -56,10 +56,10 @@ namespace Loader
                 DataTable sheetData = setData.Tables[i];
 
                 //处理Sheet数据
-                EClass sheet = GenerateSheetInfo(sheetData, diyStructDic);
+                EClass sheet = GenerateSheetInfo(sheetData);
 
                 //只加入有数据的Sheet
-                if (sheet != null && sheet.varDic != null && sheet.varDic.Count > 0)
+                if (sheet != null && sheet.IsHasVaildData())
                     sheetList.Add(sheet);
             }
             return sheetList;
@@ -85,7 +85,10 @@ namespace Loader
             }
         }
 
-        public EClass GenerateSheetInfo(DataTable sheetSet, Dictionary<string, EClass> diyStructDic)
+        /// <summary>
+        /// 生成类型信息
+        /// </summary>
+        public EClass GenerateSheetInfo(DataTable sheetSet)
         {
             //1：初始化ExcelSheet信息
             EClass sheet = new EClass(sheetSet.Columns.Count);
@@ -118,10 +121,8 @@ namespace Loader
 
                     //初始化数据，读取List结构信息
                     listVar = ReadListVariableInfo(data, columnIndex);
-                    if (!listVar.isBaseType)
-                        listVar.AddValue(listVar.GetDiyClassType());
 
-                    sheet.AddValue(listVar);
+                    sheet.AddVariable(listVar);
                 }
                 else if (headValue.StartsWith(")"))
                 {
@@ -131,34 +132,35 @@ namespace Loader
 
                     if (!listVar.isBaseType)
                     {
-                        //加入全局自定义类型列表中（自定义类型需要外部处理生成thrift）
-                        if (!diyStructDic.ContainsKey(listVar.type))
-                            diyStructDic.Add(listVar.type, listVar.GetDiyClassType());
+                        //加入自定义类型列表中
+                        sheet.AddDiyClass(listVar.GetDiyClassType());
                     }
-                }
-                else if (isListStart && string.IsNullOrEmpty(headValue))
-                {
-                    //情况3：List自定义结构循环
-
-                    //读取变量数据信息，传入List中
-                    listVar.AddVarToCopyClass(ReadListCopyVariableData(data, columnIndex));
+                    listVar.ClearData();
                 }
                 else
                 {
-                    //情况4：正常读取一个变量
+                    //情况3：正常读取一个变量
 
                     EBaseStruct variable = ReadCommonVariableInfo(data, columnIndex);
 
                     //变量归属问题
                     if (isListStart)
                     {
-                        //List集合体内，变量要加入自定义结构体中
-                        listVar.AddVarToDiyClass(variable);
+                        if (!string.IsNullOrEmpty(headValue))
+                        {
+                            //证明还在确定自定义类型结构中
+                            listVar.AddVarToDiyClass(variable);
+                        }
+                        else
+                        {
+                            //证明自定义类型结构已确定，开始结构循环
+                            listVar.AddVarToCopyClass(variable);
+                        }
                     }
                     else
                     {
                         //普通变量，存储到Sheet中
-                        sheet.AddValue(variable);
+                        sheet.AddVariable(variable);
                     }
                 }
             }
@@ -206,8 +208,7 @@ namespace Loader
         /// </summary>
         private EBaseStruct ReadCommonVariableInfo(string[,] data, int columnIndex)
         {
-            EBaseStruct variable = new EBaseStruct();
-            variable.valueList = new List<string>(data.GetLength(0));
+            EBaseStruct variable = new EBaseStruct(data.GetLength(0));
 
             for (int rowIndex = 0; rowIndex < data.GetLength(0); rowIndex++)
             {
@@ -229,28 +230,11 @@ namespace Loader
                         variable.type = strData;
                         break;
                     default:
-                        variable.valueList.Add(strData);
+                        variable.AddValue(strData);
                         break;
                 }
             }
             return variable;
-        }
-
-        /// <summary>
-        /// 读取List自定义数据结构内变量的数据
-        /// </summary>
-        /// <param name="data">Excel数据</param>
-        /// <param name="columnIndex">列数</param>
-        private List<string> ReadListCopyVariableData(string[,] data, int columnIndex)
-        {
-            List<string> values = new List<string>(data.GetLength(0) - dataRowIndex);
-
-            for (int rowIndex = dataRowIndex; rowIndex < data.GetLength(0); rowIndex++)
-            {
-                values.Add(data[rowIndex, columnIndex]);
-            }
-
-            return values;
         }
 
         /// <summary>

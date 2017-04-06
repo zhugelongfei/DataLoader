@@ -46,21 +46,21 @@ public abstract class ThriftDataTypeMgr<T>
         dataList = new List<T>(count);
 
         //数据开始标志位
-        int startPos = count;
+        int startPos = 4;
 
         for (int i = 0; i < count; i++)
         {
             //读取对象的长度
-            int length = System.BitConverter.ToInt32(bytes, startPos);
+            int objLength = System.BitConverter.ToInt32(bytes, startPos);
             startPos += 4;
 
             //反序列化为对象数据
             T data = new T();
-            ClientThriftSerialize.Instance.DeSerialize(data, bytes, startPos, length);
+            ClientThriftSerialize.Instance.DeSerialize(data, bytes, startPos, objLength);
             dataList.Add(data);
 
             //对象开始标志位向后移动
-            startPos += length;
+            startPos += objLength;
         }
 
         //清空二进制数据

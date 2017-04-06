@@ -4,27 +4,50 @@ namespace Loader
 {
     public class FilePathManager
     {
-        public const string excelFilePath = "..\\..\\Data\\ExcelFile\\ActivityLevel.xlsx";
-
         //DLL编译使用
         private const string CscPath = @"C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe";      //CSC编译工具的路径
-        public const string DLLFileName = "Data\\Result\\ThriftScript.dll";                           //生成的DLL文件名称
+        public const string DLLFilePath = "..\\..\\Data\\Result\\";
+        public const string DLLFileName = "Data\\Result\\ThriftScript.dll";                     //生成的DLL文件名称
         private const string DLLScriptPath = "Data\\ScriptFile\\ThriftStruct\\";                //代码生成路径-编译为DLL的脚本存放路径
         private const string SearchScriptPattern = "*.cs";                                      //寻找编译脚本的通配符
-        private const string ReferenceLibFilePath = "Data\\Lib\\";                                    //依赖DLL的路径
+        private const string ReferenceLibFilePath = "Data\\Lib\\";                              //依赖DLL的路径
         private const string SearchDLLPattern = "*.dll";                                        //寻找依赖DLL的通配符
 
         //thrift执行使用路径
         public const string ThriftExeFilePath = "..\\..\\Data\\Tools\\thrift-0.9.3.exe";
-        public const string ScriptOutPath = "\\Data\\ScriptFile\\";
-        public const string ThriftFilePath = "..\\..\\Data\\ThriftFile\\Activity.thrift";
-        public const string BytesFilePath = "..\\..\\Data\\Bytes\\";                       //输出二进制数据文件路径
+        public const string ScriptOutPath = "Data\\ScriptFile\\";
+        public const string BytesFilePath = "..\\..\\Data\\Bytes\\";                            //输出二进制数据文件路径
 
         //NVelocity生成thrift文件使用路径
         public const string templateFilePath = "..\\..\\Data\\TemplateFile\\CommonStructThriftTemplate.velocity";
+        public const string publicTmpFilePath = "..\\..\\Data\\TemplateFile\\PublicStructTemplate.velocity";
         public const string outputFilePath = "..\\..\\Data\\ThriftFile\\";
-        public const string outputFileName = "Activity";
         public const string outputFileExtension = ".thrift";
+
+        public const string ThriftNameSpace = "ThriftStruct.";
+
+        /// <summary>
+        /// 保证所有输出路径存在
+        /// </summary>
+        public static void InitAllPath()
+        {
+            CreateFile(GetObsolutePathByRelativePath(ScriptOutPath));
+            CreateFile(BytesFilePath);
+            CreateFile(outputFilePath);
+            CreateFile(DLLFilePath);
+        }
+
+        /// <summary>
+        /// 创建文件夹，保证输出路径存在
+        /// </summary>
+        /// <param name="filePath"></param>
+        private static void CreateFile(string filePath)
+        {
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }
+        }
 
         /// <summary>
         /// 根据相对路径，获取绝对路径

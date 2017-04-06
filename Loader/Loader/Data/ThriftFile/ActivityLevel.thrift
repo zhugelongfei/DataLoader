@@ -1,4 +1,3 @@
-include "public.thrift"  
 namespace csharp ThriftStruct
 
 /**
@@ -9,6 +8,13 @@ namespace csharp ThriftStruct
  * <para>Do not edit unless you are sure that you know what you are doning</para>
  */
 
+/** 我是注释 */
+struct TestStruct
+{
+	1:  i32   A
+	2:  i16   B
+}
+
 struct ActivityLevel
 {
 	1:  i32   Level
@@ -16,5 +22,5 @@ struct ActivityLevel
 	3:  i32   ActivityNormalShopSale
 	4:  i32   ActivityAddDanceReward
 	5:  i32   VipPriceSale
-	6:  list<public.TestStruct>   VActivityRightDesc
+	6:  list<TestStruct>   VActivityRightDesc
 }

@@ -1,29 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Thrift.Protocol;
 
 namespace Loader
 {
     public class BytesFileBuilder
     {
-        public static Assembly assembly;
-        public static void BuildAllData(Dictionary<string, List<EClass>> allExcelData)
-        {
-            assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
+        private static Assembly assembly;
 
-            foreach (var item in allExcelData)
+        public static void InitAssembly()
+        {
+            if (!File.Exists(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName)))
             {
-                //生成二进制数据文件
-                BuildBytesData(assembly, item.Key, item.Value);
+                throw new System.Exception("Can not found dll file:    " + FilePathManager.DLLFileName);
             }
+            assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
         }
 
-        private static void BuildBytesData(Assembly assembly, string fileName, List<EClass> sheetList)
+        public static System.Type GetTypeFromAssembly(string type)
         {
-            Type listType = typeof(List<>);
+            return assembly.GetType(FilePathManager.ThriftNameSpace + type); ;
+        }
 
+        public static object CreateInstance(string type)
+        {
+            return assembly.CreateInstance(FilePathManager.ThriftNameSpace + type);
+        }
+
+        public static void BuildBytesData(string fileName, List<EClass> sheetList)
+        {
             foreach (EClass sheet in sheetList)
             {
                 //存储到目标文件

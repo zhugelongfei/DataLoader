@@ -1,0 +1,27 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {03F1F93A-290C-4DCD-99BD-B4F7685FD873} = s 'LongFeiLoader'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{6504567C-D4FA-475A-8402-27675238BC33}'
+			Version = s '1.0'
+		}
+	}
+
+	NoRemove *
+	{
+		NoRemove shellex
+		{
+			NoRemove ContextMenuHandlers
+			{
+				 ForceRemove LongFeiLoader = s '{03F1F93A-290C-4DCD-99BD-B4F7685FD873}'
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+﻿  64 bit Processing .\LoaderRegKey.idl
+  LoaderRegKey.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.idl
+  oaidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\objidl.idl
+  objidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\unknwn.idl
+  unknwn.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypes.idl
+  wtypes.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypesbase.idl
+  wtypesbase.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\basetsd.h
+  basetsd.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\guiddef.h
+  guiddef.h
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.idl
+  ocidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oleidl.idl
+  oleidl.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\servprov.idl
+  servprov.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\urlmon.idl
+  urlmon.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\msxml.idl
+  msxml.idl
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.acf
+  oaidl.acf
+  64 bit Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.acf
+  ocidl.acf
+  stdafx.cpp
+  dllmain.cpp
+  LoaderRegKey.cpp
+  ExcelRegShlExt.cpp
+f:\svnproject\dataloader\loaderregkey\loaderregkey\excelregshlext.cpp(42): warning C4267: “参数”: 从“size_t”转换到“UINT”，可能丢失数据
+f:\svnproject\dataloader\loaderregkey\loaderregkey\excelregshlext.cpp(19): warning C4101: “hInst”: 未引用的局部变量
+f:\svnproject\dataloader\loaderregkey\loaderregkey\excelregshlext.cpp(21): warning C4101: “pfn”: 未引用的局部变量
+f:\svnproject\dataloader\loaderregkey\loaderregkey\excelregshlext.cpp(234): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+  LoaderRegKey_i.c
+    正在创建库 F:\SVNProject\DataLoader\LoaderRegKey\x64\Debug\LoaderRegKey.lib 和对象 F:\SVNProject\DataLoader\LoaderRegKey\x64\Debug\LoaderRegKey.exp
+  LoaderRegKey.vcxproj -> F:\SVNProject\DataLoader\LoaderRegKey\x64\Debug\LoaderRegKey.dll
+  LoaderRegKey.vcxproj -> F:\SVNProject\DataLoader\LoaderRegKey\x64\Debug\LoaderRegKey.pdb (Partial PDB)

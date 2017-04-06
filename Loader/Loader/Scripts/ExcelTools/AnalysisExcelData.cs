@@ -8,95 +8,46 @@ namespace Loader
 {
     public class AnalysisExcelData
     {
-        private IWorkbook _workBook = null;
-        private List<string> sheetNames = null;
-
-        ~AnalysisExcelData()
-        {
-            //因为这个类不是自己写的，而且这个对象有做过流操作，所以在这里关闭对象，以防无法释放资源
-            if (_workBook != null)
-                _workBook.Close();
-            _workBook = null;
-        }
-
-        #region Excel信息
 
         /// <summary>
         /// 加载Excel
         /// </summary>
         /// <param name="filePath">文件路径</param>
         /// <returns>所有Sheet名字</returns>
-        public DataSet LoadFile(string filePath)
+        public static DataSet LoadFile(string filePath, int readRowCount = -1)
         {
+            DataSet set = null;
             //读取文件，并使用工厂生成 workBook
             using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                _workBook = WorkbookFactory.Create(fileStream);
+                IWorkbook _workBook = WorkbookFactory.Create(fileStream);
+
+                set = GetAllTables(_workBook, readRowCount);
+
+                _workBook.Close();
+                _workBook = null;
             }
 
-            sheetNames = GetSheetNames();
-
-            return GetAllTables();
+            return set;
         }
-
-        /// <summary>
-        /// 获取Excel中的所有Sheet名称
-        /// </summary>
-        private List<string> GetSheetNames()
-        {
-            List<string> sheetNames = new List<string>();
-
-            //遍历Sheet的名字，添加到集合中
-            int count = _workBook.NumberOfSheets;
-            for (int i = 0; i < count; i++)
-            {
-                sheetNames.Add(_workBook.GetSheetName(i));
-            }
-            return sheetNames;
-        }
-
-        #endregion
-
-        #region 获取数据源
 
         /// <summary>
         /// 获取所有数据，所有sheet的数据转化为datatable。
         /// </summary>
-        public DataSet GetAllTables(int readRowCount = -1)
+        public static DataSet GetAllTables(IWorkbook _workBook, int readRowCount)
         {
+            if (_workBook == null)
+                return null;
+
             DataSet dataSet = new DataSet();
 
-            foreach (string sheetName in sheetNames)
+            for (int index = 0; index < _workBook.NumberOfSheets; index++)
             {
-                dataSet.Tables.Add(ExcelToDataTable(sheetName, readRowCount));
+                dataSet.Tables.Add(ExcelToDataTable(_workBook.GetSheetAt(index), readRowCount));
             }
 
             return dataSet;
         }
-
-        /// <summary>
-        /// 获取第<paramref name="index"/>的sheet的数据
-        /// </summary>
-        /// <param name="index">Excel文件的第几个sheet表</param>
-        public DataTable GetTable(int index)
-        {
-            if (index >= sheetNames.Count || index < 0)
-                throw new Exception("Do not Get This Sheet");
-            return ExcelToDataTable(sheetNames[index]);
-        }
-
-        /// <summary>
-        /// 获取sheet名称为<paramref name="sheetName"/>的数据
-        /// </summary>
-        /// <param name="sheetName">Sheet名称</param>
-        public DataTable GetTable(string sheetName, bool isFirstRowColumn)
-        {
-            return ExcelToDataTable(sheetName);
-        }
-
-        #endregion
-
-        #region 解析Sheet方法
 
         /// <summary>
         /// 将excel中的数据导入到DataTable中
@@ -104,16 +55,14 @@ namespace Loader
         /// <param name="sheetName">excel工作薄sheet的名称</param>
         /// <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
         /// <returns>返回的DataTable</returns>
-        public DataTable ExcelToDataTable(string sheetName, int readRowCount = -1)
+        public static DataTable ExcelToDataTable(ISheet sheet, int readRowCount)
         {
+            if (sheet == null)
+                return null;
+
             try
             {
-                DataTable data = new DataTable(sheetName);
-
-                //根据名字，取得Sheet对象
-                ISheet sheet = sheetName != null ? _workBook.GetSheet(sheetName) : _workBook.GetSheetAt(0);
-                if (sheet == null)
-                    throw new Exception(string.Format("Don't have This Sheet.Sheet name is {0}", sheetName));
+                DataTable data = new DataTable(sheet.SheetName);
 
                 IRow firstRow = sheet.GetRow(0);
 
@@ -163,6 +112,5 @@ namespace Loader
             }
         }
 
-        #endregion
     }
 }

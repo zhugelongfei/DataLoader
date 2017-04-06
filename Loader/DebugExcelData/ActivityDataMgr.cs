@@ -12,11 +12,11 @@ public class ActivityDataMgr : ThriftDataTypeMgr<ThriftStruct.ActivityLevel>
     {
         foreach (var data in dataList)
         {
-            //Console.WriteLine(data.ToString());
-            foreach (var va in data.VActivityRightDesc)
-            {
-                Console.WriteLine(va.ToString());
-            }
+            Console.WriteLine(data.Level.ToString());
+            //foreach (var va in data.VActivityRightDesc)
+            //{
+            //    Console.WriteLine(va.ToString());
+            //}
         }
     }
 }

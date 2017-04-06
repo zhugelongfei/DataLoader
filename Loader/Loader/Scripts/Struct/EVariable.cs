@@ -8,6 +8,16 @@ public abstract class EVariable
 
     public string note;
 
+    private const string TYPE_Boolean = "boolean";
+    private const string TYPE_Byte = "byte";
+    private const string TYPE_Short = "short";
+    private const string TYPE_Int = "int";
+    private const string TYPE_Long = "long";
+    private const string TYPE_Double = "double";
+    private const string TYPE_String = "string";
+    private const string TYPE_String_Up = "string_up";
+    private const string TYPE_String_Low = "string_low";
+
     #region NVelocity 使用的属性和函数
 
     public string NV_Name { get { return name; } }
@@ -32,31 +42,32 @@ public abstract class EVariable
     /// <summary>
     /// 转换Excel里填写的类型为Thrift类型
     /// </summary>
-    protected string ConvertThriftTypeByVarType()
+    protected string GetThriftTypeByVarType()
     {
         string thriftType = null;
         switch (type)
         {
-            case "boolean":
+            case TYPE_Boolean:
                 thriftType = "bool";
                 break;
-            case "byte":
+            case TYPE_Byte:
                 thriftType = "byte";
                 break;
-            case "short":
+            case TYPE_Short:
                 thriftType = "i16";
                 break;
-            case "int":
+            case TYPE_Int:
                 thriftType = "i32";
                 break;
-            case "long":
+            case TYPE_Long:
                 thriftType = "i64";
                 break;
-            case "double":
+            case TYPE_Double:
                 thriftType = "double";
                 break;
-            case "string":
-            case "String":
+            case TYPE_String:
+            case TYPE_String_Up:
+            case TYPE_String_Low:
                 thriftType = "string";
                 break;
         }
@@ -66,34 +77,37 @@ public abstract class EVariable
     /// <summary>
     /// 根据数据类型，转换为数据对象
     /// </summary>
-    protected object ConvertValueByType(string value)
+    protected object GetValueByType(string value)
     {
         object obj = null;
         switch (type)
         {
-            case "boolean":
+            case TYPE_Boolean:
                 obj = !string.IsNullOrEmpty(value) || value.Equals("0");
                 break;
-            case "byte":
+            case TYPE_Byte:
                 obj = byte.Parse(value);
                 break;
-            case "short":
+            case TYPE_Short:
                 obj = short.Parse(value);
                 break;
-            case "int":
+            case TYPE_Int:
                 obj = int.Parse(value);
                 break;
-            case "long":
+            case TYPE_Long:
                 obj = long.Parse(value);
                 break;
-            case "double":
+            case TYPE_Double:
                 obj = double.Parse(value);
                 break;
-            case "string":
-                obj = value == null ? value : value.ToLower();
-                break;
-            case "String":
+            case TYPE_String:
                 obj = value;
+                break;
+            case TYPE_String_Up:
+                obj = value == null ? value : value.ToUpper();
+                break;
+            case TYPE_String_Low:
+                obj = value == null ? value : value.ToLower();
                 break;
         }
         return obj;
@@ -107,30 +121,31 @@ public abstract class EVariable
         Type resultType = null;
         switch (type)
         {
-            case "boolean":
+            case TYPE_Boolean:
                 resultType = typeof(bool);
                 break;
-            case "byte":
+            case TYPE_Byte:
                 resultType = typeof(byte);
                 break;
-            case "short":
+            case TYPE_Short:
                 resultType = typeof(short);
                 break;
-            case "int":
+            case TYPE_Int:
                 resultType = typeof(int);
                 break;
-            case "long":
+            case TYPE_Long:
                 resultType = typeof(long);
                 break;
-            case "double":
+            case TYPE_Double:
                 resultType = typeof(double);
                 break;
-            case "string":
-            case "String":
+            case TYPE_String:
+            case TYPE_String_Up:
+            case TYPE_String_Low:
                 resultType = typeof(string);
                 break;
             default:
-                resultType = Loader.BytesFileBuilder.assembly.GetType("ThriftStruct." + type);
+                resultType = Loader.BytesFileBuilder.GetTypeFromAssembly(type);
                 break;
         }
         return resultType;

@@ -1,4 +1,3 @@
-include "public.thrift"  
 namespace csharp ThriftStruct
 
 /**

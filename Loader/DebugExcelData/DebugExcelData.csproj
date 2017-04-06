@@ -54,10 +54,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExcelData\ActivityLevel.bytes" />
+    <Folder Include="DataClass\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataClass\" />
+    <None Include="ExcelData\AchievementCfg.bytes" />
+    <None Include="ExcelData\ActivityLevel.bytes" />
+    <None Include="ExcelData\Counter.bytes" />
+    <None Include="ExcelData\RoomAction.bytes" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
