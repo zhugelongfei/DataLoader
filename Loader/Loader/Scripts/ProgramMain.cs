@@ -11,8 +11,10 @@ namespace Loader
 
         public static void Main(string[] args)
         {
+            DLLDynamicLoad.Init();
+
             //设置Exe运行的目录为当前目录
-            System.Environment.CurrentDirectory = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+            Environment.CurrentDirectory = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
 
             bool needReBuildSruct = true;
 
@@ -21,7 +23,7 @@ namespace Loader
             #region 取参数
             if (args.Length == 0)
             {
-                excelFiles = Directory.GetFiles("..\\..\\Data\\ExcelFile\\", "*.xlsx");
+                excelFiles = Directory.GetFiles("Data\\ExcelFile\\", "*.xlsx");
             }
             else if (args[0].Equals("/d"))
             {
@@ -79,7 +81,7 @@ namespace Loader
                     velocity = null;
 
                     //生成Csharp文件
-                    CSharpFileBuilder.BuildAllCsharpFile(thriftFileName, Console.WriteLine);
+                    CodeFileBuilder.BuildAllCsharpFile(thriftFileName, Console.WriteLine);
 
                     Console.WriteLine();
 

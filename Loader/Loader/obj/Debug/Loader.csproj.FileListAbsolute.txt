@@ -37,3 +37,8 @@ F:\SVNProject\DataLoader\Loader\Loader\bin\Debug\Thrift.pdb
 F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
 F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.exe
 F:\SVNProject\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
+F:\GitRepositories\DataLoader\Loader\Loader\bin\Debug\Loader.exe
+F:\GitRepositories\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
+F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.exe
+F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.pdb

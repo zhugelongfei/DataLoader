@@ -94,6 +94,9 @@ public class EClass : EVariable
     {
         object dataObj = Loader.BytesFileBuilder.CreateInstance(type);
 
+        if (dataObj == null)
+            System.Console.WriteLine("data obj is null :::::: type is :::" + type);
+
         //获取数据对象的所有属性，赋值
         PropertyInfo[] propertyInfoArray = dataObj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
         foreach (var item in propertyInfoArray)

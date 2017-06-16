@@ -8,3 +8,12 @@ F:\SVNProject\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csprojRe
 F:\SVNProject\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.exe
 F:\SVNProject\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.pdb
 F:\SVNProject\DataLoader\Loader\DebugExcelData\bin\Debug\ThriftScript.dll
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\DebugExcelData.exe
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\DebugExcelData.pdb
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\Thrift.dll
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\ThriftSeriable.dll
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\ThriftSeriable.pdb
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\Thrift.pdb
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csprojResolveAssemblyReference.cache
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.exe
+F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.pdb

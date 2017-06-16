@@ -47,6 +47,7 @@ public class CompileCSharpDll
         strCache.Append(compInfo.compileFilePath + compInfo.searchPattern);
 
         Process p = new Process();
+        p.StartInfo.WorkingDirectory = System.Environment.CurrentDirectory;
         p.StartInfo.FileName = compInfo.utilFilePath;
         p.StartInfo.UseShellExecute = false;
         p.StartInfo.RedirectStandardInput = false;

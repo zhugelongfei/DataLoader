@@ -11,11 +11,11 @@ namespace Loader
 
         public static void InitAssembly()
         {
-            if (!File.Exists(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName)))
+            if (!File.Exists(FilePathManager.DLLFileName))
             {
-                throw new System.Exception("Can not found dll file:    " + FilePathManager.DLLFileName);
+                throw new FileNotFoundException(FilePathManager.DLLFileName);
             }
-            assembly = Assembly.LoadFrom(FilePathManager.GetObsolutePathByRelativePath(FilePathManager.DLLFileName));
+            assembly = Assembly.LoadFrom(FilePathManager.DLLFileName);
         }
 
         public static System.Type GetTypeFromAssembly(string type)

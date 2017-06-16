@@ -110,6 +110,10 @@ public abstract class EVariable
                 obj = value == null ? value : value.ToLower();
                 break;
         }
+
+        if (obj == null)
+            System.Console.WriteLine("data obj is null :::::: type is :::" + type);
+
         return obj;
     }
 

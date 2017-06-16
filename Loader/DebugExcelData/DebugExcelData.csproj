@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivityDataMgr.cs" />
+    <Compile Include="DataClass\FileCRC.cs" />
     <Compile Include="ProgramMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,13 +54,12 @@
       <Name>Thrift</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ExcelData\AchievementCfg.bytes" />
     <None Include="ExcelData\ActivityLevel.bytes" />
     <None Include="ExcelData\Counter.bytes" />
+    <None Include="ExcelData\crc.bytes" />
     <None Include="ExcelData\RoomAction.bytes" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

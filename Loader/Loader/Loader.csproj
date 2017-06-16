@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,33 +49,36 @@
     <StartupObject>Loader.ProgramMain</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>bitbug_favicon.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NPOI.dll</HintPath>
+    <Reference Include="NPOI">
+      <HintPath>Lib\NPOI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NPOI.OOXML.dll</HintPath>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>Lib\NPOI.OOXML.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>Lib\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>Lib\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="NVelocity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NVelocity.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="NVelocity">
+      <HintPath>Lib\NVelocity.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,7 +87,8 @@
   <ItemGroup>
     <Compile Include="Scripts\BytesFileBuilder.cs" />
     <Compile Include="Scripts\CompileCSharpToDll.cs" />
-    <Compile Include="Scripts\CSharpFileBuilder.cs" />
+    <Compile Include="Scripts\CodeFileBuilder.cs" />
+    <Compile Include="Scripts\DLLDynamicLoad.cs" />
     <Compile Include="Scripts\ExcelTools\DataTableParser.cs" />
     <Compile Include="Scripts\ExcelTools\AnalysisExcelData.cs" />
     <Compile Include="Scripts\Struct\EBaseStruct.cs" />
@@ -82,33 +101,46 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\ExcelFile\AchievementCfg.xlsx" />
-    <None Include="Data\ExcelFile\ActivityLevel.xlsx" />
-    <None Include="Data\ExcelFile\Counter.xlsx" />
-    <None Include="Data\ExcelFile\RoomAction.xlsx" />
-    <None Include="Data\TemplateFile\PublicStructTemplate.velocity" />
-    <None Include="Data\TemplateFile\CommonStructThriftTemplate.velocity" />
+    <Content Include="icon.ico" />
+    <EmbeddedResource Include="Lib\ICSharpCode.SharpZipLib.dll" />
+    <EmbeddedResource Include="Lib\NPOI.dll" />
+    <EmbeddedResource Include="Lib\NPOI.OOXML.dll" />
+    <EmbeddedResource Include="Lib\NPOI.OpenXml4Net.dll" />
+    <EmbeddedResource Include="Lib\NPOI.OpenXmlFormats.dll" />
+    <EmbeddedResource Include="Lib\NVelocity.dll" />
+    <EmbeddedResource Include="Lib\Thrift.dll" />
+    <EmbeddedResource Include="Lib\ThriftSeriable.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bitbug_favicon.ico" />
-    <Content Include="Data\Lib\Thrift.dll" />
-    <Content Include="Data\Tools\thrift-0.9.3.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Bytes\" />
-    <Folder Include="Data\Result\" />
-    <Folder Include="Data\ScriptFile\ThriftStruct\" />
-    <Folder Include="Data\ThriftFile\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ThriftBytesDataProcessor\ThriftSeriable.csproj">
       <Project>{d7541b95-31e4-4bd2-bafe-324f21ff947f}</Project>
       <Name>ThriftSeriable</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Thrift\Thrift.csproj">
       <Project>{499eb63c-d74c-47e8-ae48-a2fc94538e9d}</Project>
       <Name>Thrift</Name>
+      <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

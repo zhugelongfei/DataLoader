@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System;
+using ThriftStruct;
 
 public class ProgramMain
 {
