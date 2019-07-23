@@ -1,0 +1,9 @@
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Release\ThriftSeriable.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Release\ThriftSeriable.pdb
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Release\Thrift.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Release\Thrift.pdb
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Release\ThriftSeriable.csprojAssemblyReference.cache
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Release\ThriftSeriable.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Release\ThriftSeriable.csproj.CopyComplete
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Release\ThriftSeriable.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Release\ThriftSeriable.pdb

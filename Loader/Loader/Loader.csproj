@@ -91,6 +91,7 @@
     <Compile Include="Scripts\DLLDynamicLoad.cs" />
     <Compile Include="Scripts\ExcelTools\DataTableParser.cs" />
     <Compile Include="Scripts\ExcelTools\AnalysisExcelData.cs" />
+    <Compile Include="Scripts\INIHelper.cs" />
     <Compile Include="Scripts\Struct\EBaseStruct.cs" />
     <Compile Include="Scripts\Struct\EClass.cs" />
     <Compile Include="Scripts\Struct\EListVariable.cs" />

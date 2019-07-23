@@ -1,0 +1,6 @@
+E:\DataLoader\Loader\Loader\bin\Release\Loader.exe
+E:\DataLoader\Loader\Loader\bin\Release\Loader.pdb
+E:\DataLoader\Loader\Loader\obj\Release\Loader.csprojAssemblyReference.cache
+E:\DataLoader\Loader\Loader\obj\Release\Loader.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\Loader\obj\Release\Loader.exe
+E:\DataLoader\Loader\Loader\obj\Release\Loader.pdb

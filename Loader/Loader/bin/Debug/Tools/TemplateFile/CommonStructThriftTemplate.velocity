@@ -17,6 +17,9 @@ namespace cpp ThriftStruct
 struct $diyVar.NV_Type
 {
 #foreach($variable in $diyVar.NV_ExcelVarStructDic.Values)
+#if($variable.NV_Note)
+	/** $variable.NV_Note */
+#end
 	$variable.NV_ThriftFieldStatementName($count)
 #set($count=$count + 1)
 #end
@@ -27,6 +30,9 @@ struct $diyVar.NV_Type
 struct $sheet.NV_Name
 {
 #foreach($excelItem in $sheet.NV_ExcelVarStructDic.Values)
+#if($excelItem.NV_Note)
+	/** $excelItem.NV_Note */
+#end
 	$excelItem.NV_ThriftFieldStatementName($count)
 #set($count=$count + 1)
 #end

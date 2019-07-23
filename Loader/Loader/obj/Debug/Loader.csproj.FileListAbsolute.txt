@@ -12,10 +12,8 @@ E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.exe
 E:\LongFeiTools\Loader\Loader\obj\Debug\Loader.pdb
 E:\DataLoader\Loader\Loader\bin\Debug\Loader.exe
 E:\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
-E:\DataLoader\Loader\Loader\bin\Debug\Thrift.dll
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.exe
 E:\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
-E:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
 F:\Git Repository\DataLoader\Loader\Loader\obj\Debug\Loader.exe
 F:\Git Repository\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
 F:\Git Repository\DataLoader\Loader\Loader\bin\Debug\Loader.exe
@@ -42,3 +40,5 @@ F:\GitRepositories\DataLoader\Loader\Loader\bin\Debug\Loader.pdb
 F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
 F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.exe
 F:\GitRepositories\DataLoader\Loader\Loader\obj\Debug\Loader.pdb
+E:\DataLoader\Loader\Loader\obj\Debug\Loader.csprojAssemblyReference.cache
+E:\DataLoader\Loader\Loader\obj\Debug\Loader.csproj.CoreCompileInputs.cache

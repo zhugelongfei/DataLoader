@@ -7,3 +7,9 @@ F:\GitRepositories\DataLoader\Loader\Thrift\bin\Debug\Thrift.pdb
 F:\GitRepositories\DataLoader\Loader\Thrift\obj\Debug\Thrift.dll
 F:\GitRepositories\DataLoader\Loader\Thrift\obj\Debug\Thrift.pdb
 F:\GitRepositories\DataLoader\Loader\Thrift\obj\Debug\Thrift.csprojResolveAssemblyReference.cache
+E:\DataLoader\Loader\Thrift\bin\Debug\Thrift.dll
+E:\DataLoader\Loader\Thrift\bin\Debug\Thrift.pdb
+E:\DataLoader\Loader\Thrift\obj\Debug\Thrift.csprojAssemblyReference.cache
+E:\DataLoader\Loader\Thrift\obj\Debug\Thrift.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\Thrift\obj\Debug\Thrift.dll
+E:\DataLoader\Loader\Thrift\obj\Debug\Thrift.pdb

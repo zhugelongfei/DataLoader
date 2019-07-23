@@ -27,6 +27,7 @@ namespace Loader
             }
             else if (args[0].Equals("/d"))
             {
+				//只生成数据，不更改结构
                 needReBuildSruct = false;
                 if (args.Length > 1)
                 {

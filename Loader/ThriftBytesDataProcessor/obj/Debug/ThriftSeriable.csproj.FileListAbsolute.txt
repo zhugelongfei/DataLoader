@@ -12,3 +12,12 @@ F:\GitRepositories\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\Thrift.p
 F:\GitRepositories\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.csprojResolveAssemblyReference.cache
 F:\GitRepositories\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.dll
 F:\GitRepositories\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.pdb
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\ThriftSeriable.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\ThriftSeriable.pdb
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\Thrift.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\bin\Debug\Thrift.pdb
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.csprojAssemblyReference.cache
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.csproj.CopyComplete
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.dll
+E:\DataLoader\Loader\ThriftBytesDataProcessor\obj\Debug\ThriftSeriable.pdb

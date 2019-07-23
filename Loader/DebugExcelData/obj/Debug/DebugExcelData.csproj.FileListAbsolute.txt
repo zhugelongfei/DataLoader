@@ -17,3 +17,14 @@ F:\GitRepositories\DataLoader\Loader\DebugExcelData\bin\Debug\Thrift.pdb
 F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csprojResolveAssemblyReference.cache
 F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.exe
 F:\GitRepositories\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.pdb
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\DebugExcelData.exe
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\DebugExcelData.pdb
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\Thrift.dll
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\ThriftSeriable.dll
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\ThriftSeriable.pdb
+E:\DataLoader\Loader\DebugExcelData\bin\Debug\Thrift.pdb
+E:\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csprojAssemblyReference.cache
+E:\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.csproj.CopyComplete
+E:\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.exe
+E:\DataLoader\Loader\DebugExcelData\obj\Debug\DebugExcelData.pdb

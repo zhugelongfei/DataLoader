@@ -149,7 +149,7 @@ public class EListVariable : EVariable
         IList listInstance = (IList)Activator.CreateInstance(listTypeInstance);
 
         //生成数据对象，并存储信息
-        foreach (EClass classData in varList)
+        foreach (EVariable classData in varList)
         {
             listInstance.Add(classData.GetDataByRowIndex(index));
         }

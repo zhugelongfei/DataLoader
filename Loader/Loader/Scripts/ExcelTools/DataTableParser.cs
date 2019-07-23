@@ -8,22 +8,22 @@ namespace Loader
         /// <summary>
         /// 变量名行
         /// </summary>
-        private const int nameRowIndex = 0;
+        private const int NAME_ROW_INDEX = 0;
 
         /// <summary>
         /// 注释行
         /// </summary>
-        private const int noteRowIndex = 1;
+        private const int NOTE_ROW_INDEX = 1;
 
         /// <summary>
         /// 变量类型行
         /// </summary>
-        private const int typeRowIndex = 2;
+        private const int TYPE_ROW_INDEX = 2;
 
         /// <summary>
         /// 数据开始行
         /// </summary>
-        private const int dataRowIndex = 3;
+        private const int DATA_ROW_INDEX = 3;
 
         private bool isListStart = false;
         private List<int> ignoreRow = new List<int>();
@@ -73,14 +73,14 @@ namespace Loader
             //忽略行集合
             for (int rowIndex = 0; rowIndex < data.GetLength(0); rowIndex++)
             {
-                if (IsIgnro(data[rowIndex, 0]))
+                if (rowIndex >= DATA_ROW_INDEX && string.IsNullOrEmpty(data[rowIndex, 0]) || IsIgnro(data[rowIndex, 0]))
                     ignoreRow.Add(rowIndex);
             }
 
             //忽略列集合
             for (int columnIndex = 0; columnIndex < data.GetLength(1); columnIndex++)
             {
-                if (IsIgnro(data[nameRowIndex, columnIndex]))
+                if (IsIgnro(data[NAME_ROW_INDEX, columnIndex]))
                     ignoreColumn.Add(columnIndex);
             }
         }
@@ -97,7 +97,7 @@ namespace Loader
 
             //2：转换DataTable为string的二维数组
             string[,] data = DataTableConvertToStringArray(sheetSet);
-            sheet.rowDataCount = data.GetLength(0) - 3;
+            sheet.rowDataCount = data.GetLength(0) - DATA_ROW_INDEX;
 
             //3：获取忽略行列集合
             LoadExcelIgnoreColumnAndRow(data);
@@ -107,7 +107,7 @@ namespace Loader
 
             for (int columnIndex = 0; columnIndex < data.GetLength(1); columnIndex++)
             {
-                string headValue = data[nameRowIndex, columnIndex];
+                string headValue = data[NAME_ROW_INDEX, columnIndex];
 
                 //列-忽略检测
                 if (ignoreColumn.Contains(columnIndex))
@@ -175,26 +175,29 @@ namespace Loader
         {
             EListVariable variable = new EListVariable(data.GetLength(1));
 
-            for (int rowIndex = 0; rowIndex < dataRowIndex; rowIndex++)
+            for (int rowIndex = 0; rowIndex < DATA_ROW_INDEX; rowIndex++)
             {
                 string strData = data[rowIndex, columnIndex];
 
                 switch (rowIndex)
                 {
-                    case nameRowIndex:
+                    case NAME_ROW_INDEX:
                         variable.name = strData.Replace("(", "");
                         break;
-                    case noteRowIndex:
+                    case NOTE_ROW_INDEX:
                         variable.note = strData.Replace("(", "");
                         break;
-                    case typeRowIndex:
+                    case TYPE_ROW_INDEX:
                         string value = strData.Replace("(", "");
 
-                        //如果类型为Null或""则说明，这个List的范型是基础数据类型，不需要自定义
-                        if (string.IsNullOrEmpty(value))
-                            variable.isBaseType = true;
-                        else
-                            variable.type = value;
+						//如果类型为Null或""则说明，这个List的范型是基础数据类型，不需要自定义
+						if (EVariable.IsBaseType(value))
+						{
+							variable.type = value;
+							variable.isBaseType = true;
+						}
+						else
+							variable.type = value;
 
                         break;
                 }
@@ -220,13 +223,13 @@ namespace Loader
 
                 switch (rowIndex)
                 {
-                    case nameRowIndex:
+                    case NAME_ROW_INDEX:
                         variable.name = strData;
                         break;
-                    case noteRowIndex:
+                    case NOTE_ROW_INDEX:
                         variable.note = strData;
                         break;
-                    case typeRowIndex:
+                    case TYPE_ROW_INDEX:
                         variable.type = strData;
                         break;
                     default:
@@ -242,9 +245,6 @@ namespace Loader
         /// </summary>
         private bool IsIgnro(string str)
         {
-            if (string.IsNullOrEmpty(str))
-                return false;
-
             return str.StartsWith("#");
         }
 

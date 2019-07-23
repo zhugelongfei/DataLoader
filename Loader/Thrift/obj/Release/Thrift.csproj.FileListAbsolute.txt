@@ -1,0 +1,6 @@
+E:\DataLoader\Loader\Thrift\bin\Release\Thrift.dll
+E:\DataLoader\Loader\Thrift\bin\Release\Thrift.pdb
+E:\DataLoader\Loader\Thrift\obj\Release\Thrift.csprojAssemblyReference.cache
+E:\DataLoader\Loader\Thrift\obj\Release\Thrift.csproj.CoreCompileInputs.cache
+E:\DataLoader\Loader\Thrift\obj\Release\Thrift.dll
+E:\DataLoader\Loader\Thrift\obj\Release\Thrift.pdb

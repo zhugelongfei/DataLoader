@@ -54,6 +54,15 @@ namespace Loader
                         fs.Write(dataBytes, 0, dataBytes.Length);
                         fs.Flush();
                     }
+
+					//copy bytes file
+					if (!string.IsNullOrEmpty(FilePathManager.extOutputBytesPath))
+					{
+						if (Directory.Exists(FilePathManager.extOutputBytesPath))
+						{
+							File.Copy(FilePathManager.BytesFilePath + fileName + ".bytes", FilePathManager.extOutputBytesPath + fileName + ".bytes", true);
+						}
+					}
                 }
             }
         }

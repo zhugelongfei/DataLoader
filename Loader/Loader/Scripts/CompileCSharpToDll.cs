@@ -1,5 +1,7 @@
 ﻿using System.Text;
 using System.Diagnostics;
+using Loader;
+using System.IO;
 
 public class CompileCSharpDll
 {
@@ -83,6 +85,15 @@ public class CompileCSharpDll
             }
         }
 
-        p.Close();
+		//copy assembly file
+		if (!string.IsNullOrEmpty(FilePathManager.extOutputAssemblyPath))
+		{
+			if (Directory.Exists(FilePathManager.extOutputAssemblyPath))
+			{
+				File.Copy(compInfo.dllOutPath, FilePathManager.extOutputAssemblyPath + FilePathManager.DLLName, true);
+			}
+		}
+
+		p.Close();
     }
 }

@@ -54,11 +54,15 @@ public class EClass : EVariable
     /// <returns>数据</returns>
     public object GetVariableValueByVarNameAndRow(string varName, int index)
     {
-        if (!varDic.ContainsKey(varName))
-            return null;
+		if (!varDic.ContainsKey(varName))
+		{
+			throw new System.Exception("Can not find this var : " + varName);
+		}
 
-        if (varDic[varName] == null)
-            return null;
+		if (varDic[varName] == null)
+		{
+			throw new System.Exception("This var name's data is null : " + varName);
+		}
 
         return varDic[varName].GetDataByRowIndex(index);
     }

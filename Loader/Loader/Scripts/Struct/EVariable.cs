@@ -154,4 +154,15 @@ public abstract class EVariable
         }
         return resultType;
     }
+
+	public static bool IsBaseType(string type)
+	{
+		if (string.IsNullOrEmpty(type))
+			return false;
+
+		if (type.Equals(TYPE_Boolean) || type.Equals(TYPE_Byte) || type.Equals(TYPE_Short) || type.Equals(TYPE_Int) || type.Equals(TYPE_Long) || type.Equals(TYPE_Double) || type.Equals(TYPE_String) || type.Equals(TYPE_String_Up) || type.Equals(TYPE_String_Low))
+			return true;
+
+		return false;
+	}
 }
